@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Gnuplot
+GenericName=XDAQ Gnuplot
+Exec=xterm -fa 'Monospace:size=12:antialias=true:hinting=true' -fg blue -bg white -geometry 75x40 -e "gnuplot"
+Icon=openterm
+StartupNotify=true
+Terminal=false
+Categories=Development
+Comment=Gnuplot
+Hidden=false
+X-GNOME-Autostart-enabled=true

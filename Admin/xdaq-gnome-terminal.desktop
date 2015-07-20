@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal
+GenericName=XDAQ Debianinux nome Terminal 
+Exec=gnome-terminal
+Icon=openterm
+StartupNotify=true
+Terminal=false
+Categories=Development
+Comment=Gnome Terminal
+Hidden=false
+X-GNOME-Autostart-enabled=true

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Processing 2.2.1
+GenericName=XDAQ - Processing
+Exec=processing
+Icon=/usr/share/icons/gnome/256x256/xdaq-processing-logo.png
+StartupNotify=true
+Terminal=false
+Categories=Development
+Comment=Release suitable for any Arduino boards

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Scilab
+GenericName=XDAQ - Scilab
+Exec=scilab
+Icon=/usr/share/icons/gnome/256x256/xdaq-scilab-logo.png
+StartupNotify=true
+Terminal=false
+Categories=Development
+Comment=Release suitable for Debian context

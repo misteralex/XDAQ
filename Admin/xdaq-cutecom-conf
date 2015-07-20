@@ -1,0 +1,23 @@
+[cutecom]
+HardwareHandshake=false
+SoftwareHandshake=false
+OpenForReading=true
+OpenForWriting=true
+DontApplySettings=false
+Device=/dev/ttyACM0
+Baud=17
+Databits=3
+Parity=0
+Stopbits=0
+Protocol=0
+width=905
+height=770
+LineMode=0
+HexOutput=false
+CharDelay=1
+SendFileDialogStartDir=~
+LogFileName=/var/log/xdaq-cutecom.log
+AppendToLogFile=1
+CurrentDevice=/dev/ttyACM0
+AllDevices=/dev/ttyS0, /dev/ttyS1, /dev/ttyS2, /dev/ttyACM0
+History=

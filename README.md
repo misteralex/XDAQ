@@ -1,4 +1,3 @@
-# XDAQ
 # XDAQ - Virtual Appliance - Open Source Stack
 XDAQ is an ecosystem of Open Source software for controlling Arduino based experimental data from sensors. It is avaiable as integration for Debian (Wheezy or Jessie releases), for Ubuntu (release 10.04) and as Virtual Debian Appliance Builder. The release XDAQ v1.0 includes Arduino IDE, Eclipse Luna C/C++ for Arduino and Python toolchains, some useful tools oriented to quality control with Doxygen and ArduinoUnit, to provide high performance and creative processes with openFrameworks C++ toolkit and Processing, to research with Python-based software, to make electronics accessible with Fritzing and more.
 
@@ -20,22 +19,21 @@ XDAQ provide an easy powerful tool to install your customized environment, Debia
 
 ### From source
 - Download the latest release
-- Or clone it from Github using the command `git clone git@github.com:misteralex/Debianinux.git`
-- Check the Debianinux tutorial and this readme about usage options.
+- Or clone it from Github using the command `git clone git@github.com:misteralex/XDAQ
+- Read the XDAQ Guide for more info
 
 
 ## Requirements
-You need to have Debianinux or equivalent environment that include Arduino IDE, Eclipse C++ IDE with "Arduino Eclipse IDE V2" plugin or Arduino-Makefile.
+You need to have a Debian based environment (Wheezy, Jessie), Ubuntu or a virtual Debian based appliance like Debianinux
 
 ## Usage
-To use these examples is enough open them through Eclipse or use standard make tool from terminal.
+The XDAQ Guide is a comprehensive document to use XDAQ project as you like. It is strongly adviced to use XDAQ Tools.
 
-Refer to www.embeddedrevolution.info for more information (see Debianinux and XDAQ Guides).
+Refer to www.embeddedrevolution.info for more information.
 
 
 ## License
-
-XDAQ, Debianinux as well as XTable/XEEPROM Arduino libraries and the related documentation are free software; you can redistribute them and/or modify them under the terms of the GNU GFDL License as published by the Free Software Foundation.
+XDAQ, Debianinux as well as XTable/XEEPROM Arduino libraries and the related documentation are free software; you can redistribute them and/or modify them under the terms of the GNU General Public License as published by the Free Software Foundation.
 
 ## Contribution
 Copyright AF 2015
