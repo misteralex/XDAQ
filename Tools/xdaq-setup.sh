@@ -188,7 +188,8 @@ function InitPackagesStatus()
 # Check current XDAQ/Desktop Applications
 function CheckXDAQDesktop()
 {
-	rm -rf $HOMEDEV/XDAQ/Desktop/*
+	rm -rf $HOMEDEV/XDAQ/Desktop
+	mkdir $HOMEDEV/XDAQ/Desktop/*
 	cd  $HOMEDEV/XDAQ/Desktop
 	cp $GNOME_SHARE_APPS/xdaq*.desktop .
 
