@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Libelium - Waspmote Pro IDE
+GenericName=XDAQ - Libelium - Waspmote Pro IDE
+Exec=waspmote
+Icon=/usr/share/icons/gnome/256x256/xdaq-libelium-logo.png
+StartupNotify=true
+Terminal=false
+Categories=Development
+Comment=Release suitable for Arduino boards

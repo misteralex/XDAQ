@@ -1234,6 +1234,7 @@ if [ "$1" != "1" ];
 then
 	apt-get --yes --force-yes -f install
 	apt-get --yes --force-yes --reinstall install qt4-dev-tools
+	ConfigGnomeMenu qtcreator
 	ConfigGnomeMenu assistant-qt4
 	ConfigGnomeMenu designer-qt4
 	ConfigGnomeMenu linguist-qt4

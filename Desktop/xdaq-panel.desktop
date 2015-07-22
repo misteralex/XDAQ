@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=XDAQ Panel
+GenericName=XDAQ
+Exec=bash -c "nautilus ~/XDAQ/Desktop"
+Icon=/usr/share/icons/gnome/256x256/xdaq-starter-logo.png
+StartupNotify=true
+Terminal=false
+Categories=Development
+omment=Release suitable for any Arduino boards
