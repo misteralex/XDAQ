@@ -127,60 +127,59 @@ function InitPackagesStatus()
 	   "[123] Time Zone          "		""
 	   "[124] Keyboard           "		""
 	   "[125] XDAQ Panel         "		""
-
 	)
 
 	# Global variable to manage packages version
 	PKG_VER=(
-	"VMware Tools      "	""	""			            203	"vmware-toolbox-cmd" 					                      "vmware-toolbox-cmd -v"
-	"System info       "	""	""			            10	"uname" 						                                "uname -v" 								
-	"GCC Toolchain     "  ""	""			            10	"gcc" 							                                "gcc --version |grep gcc|awk -F' '  '{print \$4}'"	
-	"Gnome Desktop     "	""	""			            11	"gnome-session" 					                          "dpkg -l|grep gnome-session-bin|awk -F' ' '{print \$3}'"
-	"Java              "	""	""			            12	"java" 							                                "java -version 2>&1|grep \"java version\"|awk -F' ' '{print \$3}'|awk -F'\"' '{print \$2}'"
-	"Python            "	""	""			            12	"python" 						                                "python -V 2>&1 |awk -F' ' '{print \$2}'"
-	"Sudo              "	""	""			            12	"sudo" 							                                "sudo -V |grep \"Sudo version\"|awk -F' ' '{print \$3}'"
-	"SSH               "	""	""			            12	"ssh" 							                                "ssh -V 2>&1|awk -F' ' '{print \$1}'"
-	"Serial Receiver   "	""	"$GNOME_SUPPORT"	  12	"cutecom" 						                              "dpkg -l|grep cutecom|awk -F' ' '{print \$3}'"
-	"Git               "	""	""			            13	"git" 							                                "git --version|awk -F' ' '{print \$3}'"
-	"Giggle            "	""	"$GNOME_SUPPORT"	  13	"giggle" 						                                "dpkg -l|grep giggle|awk -F' ' '{print \$3}'"
-	"Arduino IDE       "	""	"$GNOME_SUPPORT"	  14	"arduino" 						                              "echo $ARDUINOVER"
-	"Eclipse IDE       "	""	"$GNOME_SUPPORT"	  15	"eclipse" 						                              "cat /opt/eclipse/.eclipseproduct |grep version|awk -F= '{print \$2}'"
+	"VMware Tools      "	""	""                  203	"vmware-toolbox-cmd"                               "vmware-toolbox-cmd -v"
+	"System info       "	""	""                  10	"uname"                                             "uname -v"
+	"GCC Toolchain     "  ""	""                  10	"gcc"                                               "gcc --version |grep gcc|awk -F' '  '{print \$4}'"	
+	"Gnome Desktop     "	""	""                  11	"gnome-session"                                     "dpkg -l|grep gnome-session-bin|awk -F' ' '{print \$3}'"
+	"Java              "	""	""                  12	"java"                                              "java -version 2>&1|grep \"java version\"|awk -F' ' '{print \$3}'|awk -F'\"' '{print \$2}'"
+	"Python            "	""	""                  12	"python"                                            "python -V 2>&1 |awk -F' ' '{print \$2}'"
+	"Sudo              "	""	""                  12	"sudo"                                              "sudo -V |grep \"Sudo version\"|awk -F' ' '{print \$3}'"
+	"SSH               "	""	""			            12	"ssh"                                               "ssh -V 2>&1|awk -F' ' '{print \$1}'"
+	"Serial Receiver   "	""	"$GNOME_SUPPORT"	  12	"cutecom"                                           "dpkg -l|grep cutecom|awk -F' ' '{print \$3}'"
+	"Git               "	""	""			            13	"git"                                               "git --version|awk -F' ' '{print \$3}'"
+	"Giggle            "	""	"$GNOME_SUPPORT"	  13	"giggle"                                            "dpkg -l|grep giggle|awk -F' ' '{print \$3}'"
+	"Arduino IDE       "	""	"$GNOME_SUPPORT"	  14	"arduino"                                           "echo $ARDUINOVER"
+	"Eclipse IDE       "	""	"$GNOME_SUPPORT"	  15	"eclipse"                                           "cat /opt/eclipse/.eclipseproduct |grep version|awk -F= '{print \$2}'"
 
-	"Doxygen           "	""	""			            20	"doxygen" 						                              "doxygen --version"		
-	"Texmaker          "	""	"$GNOME_SUPPORT"	  21	"texmaker" 						                              "dpkg -l|grep texmaker-data|awk -F' ' '{print \$3}'"
-	"Fritzing          "	""	"$GNOME_SUPPORT"	  22	"fritzing" 						                              "echo $FRITZINGVER"
-	"Processing        "	""	"$GNOME_SUPPORT"	  23	"processing"						                            "readlink -f `which processing` | awk -F/ '{print \$3}' | awk -F'-' '{print \$2}'"
-	"openFrameworks    "	""	"$GNOME_SUPPORT"	  24	"/opt/of_libs_openFrameworks"				                "echo $OFVER"
-	"SQLite            "	""	""			            25	"sqlite3" 						                              "sqlite3 --version|awk -F' ' '{print \$1}'"
-	"[SciPy] numpy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/numpy" 		        "dpkg -l|grep python-numpy|awk -F' ' '{print \$3}'"
-	"[SciPy] scipy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/scipy"		        "dpkg -l|grep python-scipy|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
-	"[SciPy] matplotlib"	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/matplotlib"	      "dpkg -l |grep python-matplotlib| grep i386 | awk -F' ' '{print \$3}'"
-	"[SciPy] ipython   "	""	"$PYTHON_SUPPORT"	  26	"ipython" 						                              "exec ipython --version 2>&1"
-	"[SciPy] notebook  "	""	"$PYTHON_SUPPORT"	  26	"/usr/share/ipython/notebook"				                "dpkg -l|grep ipython-notebook-common|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
-	"[SciPy] pandas    "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/pandas"		        "dpkg -l|grep python-pandas|grep i386|awk -F' ' '{print \$3}'"
-	"[SciPy] sympy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/sympy"		        "dpkg -l|grep python-sympy|awk -F' ' '{print \$3}'"
-	"[SciPy] nose      "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/nose"			        "dpkg -l|grep python-nose|awk -F' ' '{print \$3}'"
-	"GNU Octave        "	""	"$GNOME_SUPPORT"	  27	"octave"						                                "octave --version 2>&1|grep \"GNU Octave\"|awk -F' ' '{print \$4}'"
-	"Gnuplot           "	""	"$GNOME_SUPPORT"	  28	"gnuplot" 						                              "echo $GNUPLOTVER"
-	"GSL               "	""	"$GNOME_SUPPORT"	  29	"/usr/local/include/gsl" 				                    "echo $GSLVER"
-	"Scilab            "	""	"$GNOME_SUPPORT"	  30	"/usr/local/bin/scilab" 				                    "echo $SCILABVER"
-	"Qt                "	""	"$GNOME_SUPPORT"	  31	"designer-qt4" 						                          "dpkg -l|grep qt4-dev-tools|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
+	"Doxygen           "	""	""			            20	"doxygen"                                           "doxygen --version"		
+	"Texmaker          "	""	"$GNOME_SUPPORT"	  21	"texmaker"                                          "dpkg -l|grep texmaker-data|awk -F' ' '{print \$3}'"
+	"Fritzing          "	""	"$GNOME_SUPPORT"	  22	"fritzing"                                          "echo $FRITZINGVER"
+	"Processing        "	""	"$GNOME_SUPPORT"	  23	"processing"                                        "readlink -f `which processing` | awk -F/ '{print \$3}' | awk -F'-' '{print \$2}'"
+	"openFrameworks    "	""	"$GNOME_SUPPORT"	  24	"/opt/of_libs_openFrameworks"                       "echo $OFVER"
+	"SQLite            "	""	""			            25	"sqlite3"                                           "sqlite3 --version|awk -F' ' '{print \$1}'"
+	"[SciPy] numpy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/numpy"            "dpkg -l|grep python-numpy|awk -F' ' '{print \$3}'"
+	"[SciPy] scipy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/scipy"            "dpkg -l|grep python-scipy|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
+	"[SciPy] matplotlib"	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/matplotlib"       "dpkg -l |grep python-matplotlib| grep i386 | awk -F' ' '{print \$3}'"
+	"[SciPy] ipython   "	""	"$PYTHON_SUPPORT"	  26	"ipython"                                           "exec ipython --version 2>&1"
+	"[SciPy] notebook  "	""	"$PYTHON_SUPPORT"	  26	"/usr/share/ipython/notebook"                       "dpkg -l|grep ipython-notebook-common|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
+	"[SciPy] pandas    "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/pandas"           "dpkg -l|grep python-pandas|grep i386|awk -F' ' '{print \$3}'"
+	"[SciPy] sympy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/sympy"            "dpkg -l|grep python-sympy|awk -F' ' '{print \$3}'"
+	"[SciPy] nose      "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/nose"             "dpkg -l|grep python-nose|awk -F' ' '{print \$3}'"
+	"GNU Octave        "	""	"$GNOME_SUPPORT"	  27	"octave"                                            "octave --version 2>&1|grep \"GNU Octave\"|awk -F' ' '{print \$4}'"
+	"Gnuplot           "	""	"$GNOME_SUPPORT"	  28	"gnuplot"                                           "echo $GNUPLOTVER"
+	"GSL               "	""	"$GNOME_SUPPORT"	  29	"/usr/local/include/gsl"                            "echo $GSLVER"
+	"Scilab            "	""	"$GNOME_SUPPORT"	  30	"/usr/local/bin/scilab"                             "echo $SCILABVER"
+	"Qt                "	""	"$GNOME_SUPPORT"	  31	"designer-qt4"                                      "dpkg -l|grep qt4-dev-tools|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
 
 	"ArduinoUnit       "  ""	"$ARDUINO_SUPPORT"  50	"$HOMEDEV/Arduino/libraries/arduinounit-master"     "echo $ARDUINOUNITVER"
-	"XTable            "  ""	"$ARDUINO_SUPPORT"	51	"$HOMEDEV/Arduino/libraries/XTable-Arduino"		      "cat $HOMEDEV/Arduino/libraries/XTable-Arduino/library.properties 2>&1|grep version|awk -F'=' '{print \$2}'"
-	"pyFirmata         "	""	"$PYTHON_SUPPORT"	  52	"/usr/local/lib/python2.7/dist-packages/pyfirmata"	"exec pip freeze 2>&1 |grep -i pyFirmata|awk -F'==' '{print \$2}'"
-	"Plotly            "	""	"$ARDUINO_SUPPORT"	53	"/opt/plotly-arduino-api"				                    "echo $PLOTLYVER"
-	"Node.js           "	""	""			            53	"node" 							                                "echo $NODEJSVER"
+	"XTable            "  ""	"$ARDUINO_SUPPORT"	51	"$HOMEDEV/Arduino/libraries/XTable-Arduino"         "cat $HOMEDEV/Arduino/libraries/XTable-Arduino/library.properties 2>&1|grep version|awk -F'=' '{print \$2}'"
+	"pyFirmata         "	""	"$PYTHON_SUPPORT"	  52	"/usr/local/lib/python2.7/dist-packages/pyfirmata"  "exec pip freeze 2>&1 |grep -i pyFirmata|awk -F'==' '{print \$2}'"
+	"Plotly            "	""	"$ARDUINO_SUPPORT"	53	"/opt/plotly-arduino-api"                           "echo $PLOTLYVER"
+	"Node.js           "	""	""			            53	"node"                                              "echo $NODEJSVER"
 
-	"Vim               "	""	"$GNOME_SUPPORT"	  70	"gvim" 							                                "dpkg -l|grep vim-gnome|awk -F' ' '{print \$3}'"
-	"Xfig              "	""	"$GNOME_SUPPORT"	  71	"xfig" 							                                "dpkg -l|grep xfig|grep i386|awk -F' ' '{print \$3}'"
-	"GNU Units         "	""	"$GNOME_SUPPORT"	  72	"units" 						                                "dpkg -l|grep units|awk -F' ' '{print \$3}'"
-	"PuTTY             "	""	"$GNOME_SUPPORT"	  73	"putty" 						                                "dpkg -l|grep putty-tools|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
-	"EAGLE PCB Design  "	""	"$GNOME_SUPPORT"	  74	"eagle" 						                                "echo $EAGLEPCBVER"
+	"Vim               "	""	"$GNOME_SUPPORT"	  70	"gvim"                                              "dpkg -l|grep vim-gnome|awk -F' ' '{print \$3}'"
+	"Xfig              "	""	"$GNOME_SUPPORT"	  71	"xfig"                                              "dpkg -l|grep xfig|grep i386|awk -F' ' '{print \$3}'"
+	"GNU Units         "	""	"$GNOME_SUPPORT"	  72	"units"                                             "dpkg -l|grep units|awk -F' ' '{print \$3}'"
+	"PuTTY             "	""	"$GNOME_SUPPORT"	  73	"putty"                                             "dpkg -l|grep putty-tools|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
+	"EAGLE PCB Design  "	""	"$GNOME_SUPPORT"	  74	"eagle"                                             "echo $EAGLEPCBVER"
 
-	"Libel. Waspmote   "	""	"$GNOME_SUPPORT"	  100	"waspmote" 						                              "echo $LIB_WASPMOTEVER"
-	"Libel. Plug&Sense!"	""	"$GNOME_SUPPORT"	  100	"waspmote" 						                              "echo $LIB_PLUGSENSEVER"
-	"Sunbe. SODAQ Mbili"	""	"$ARDUINO_SUPPORT"	100	"$HOMEDEV/Arduino/libraries/Sodaq" 			            "echo $SUNBED_SODAQVER"
+	"Libel. Waspmote   "	""	"$GNOME_SUPPORT"	  100	"waspmote"                                          "echo $LIB_WASPMOTEVER"
+	"Libel. Plug&Sense!"	""	"$GNOME_SUPPORT"	  100	"waspmote"                                          "echo $LIB_PLUGSENSEVER"
+	"Sunbe. SODAQ Mbili"	""	"$ARDUINO_SUPPORT"	100	"$HOMEDEV/Arduino/libraries/Sodaq"                  "echo $SUNBED_SODAQVER"
 	)
 }
 
@@ -189,9 +188,8 @@ function InitPackagesStatus()
 function CheckXDAQDesktop()
 {
 	rm -rf $HOMEDEV/XDAQ/Desktop
-	mkdir $HOMEDEV/XDAQ/Desktop/*
-	cd  $HOMEDEV/XDAQ/Desktop
-	cp $GNOME_SHARE_APPS/xdaq*.desktop .
+	mkdir $HOMEDEV/XDAQ/Desktop
+	cp $GNOME_SHARE_APPS/xdaq*.desktop $HOMEDEV/XDAQ/Desktop
 
 	# Validate all current applications
 	chmod +x *
