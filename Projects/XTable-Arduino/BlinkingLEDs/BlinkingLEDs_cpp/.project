@@ -32,6 +32,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>src</name>
+			<type>2</type>
+			<locationURI>BlinkingLEDssrc/src</locationURI>
+		</link>
+		<link>
 			<name>Libraries/Firmata</name>
 			<type>2</type>
 			<locationURI>ArduinoLibPath/Firmata</locationURI>
@@ -42,9 +47,9 @@
 			<locationURI>ArduinoLibPath/XEEPROM</locationURI>
 		</link>
 		<link>
-			<name>Libraries/XTable</name>
+			<name>Libraries/arduinounit-master</name>
 			<type>2</type>
-			<locationURI>ArduinoLibPath/XTable</locationURI>
+			<locationURI>ArduinoPivateLibPath/arduinounit-master</locationURI>
 		</link>
 		<link>
 			<name>arduino/core</name>
@@ -60,15 +65,15 @@
 	<variableList>
 		<variable>
 			<name>ArduinoHardwareLibPath</name>
-			<value>file:/opt/arduino-1.6.4/hardware/arduino/avr/libraries</value>
+			<value>file:/opt/arduino-1.6.5/hardware/arduino/avr/libraries</value>
 		</variable>
 		<variable>
 			<name>ArduinoPinPath</name>
-			<value>file:/opt/arduino-1.6.4/hardware/arduino/avr/variants</value>
+			<value>file:/opt/arduino-1.6.5/hardware/arduino/avr/variants</value>
 		</variable>
 		<variable>
 			<name>ArduinoPlatformPath</name>
-			<value>file:/opt/arduino-1.6.4/hardware/arduino/avr</value>
+			<value>file:/opt/arduino-1.6.5/hardware/arduino/avr</value>
 		</variable>
 	</variableList>
 </projectDescription>

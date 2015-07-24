@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Arduino IDE 1.6
+GenericName=XDAQ - Debianinux - Arduino IDE
+Exec=arduino
+Icon=/usr/share/icons/gnome/256x256/xdaq-arduino-logo.png
+StartupNotify=true
+Terminal=false
+Categories=Development
+Comment=Release suitable for any Arduino board
