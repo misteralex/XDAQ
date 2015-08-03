@@ -1,22 +1,22 @@
 #!/bin/bash
 
 #########################################################################
-# xdaq-starter.sh - Script to build XDAQ v1.0 Virtual Appliance 	      # 
+# xdaq-starter.sh - Script to build XDAQ v1.0 Virtual Appliance         # 
 # Copyright (C) 2015 by AF                                              #
 #                                                                       #
-# xdaq-starter.sh is free software: you can redistribute it and/or 	    #
-# modify it under the terms of the GNU General Public License 		      #
-# as published by the Free Software Foundation, either version 3 of 	  #
+# xdaq-starter.sh is free software: you can redistribute it and/or      #
+# modify it under the terms of the GNU General Public License           #
+# as published by the Free Software Foundation, either version 3 of     #
 # the License, or (at your option) any later version.                   #
 #                                                                       #
-# xdaq-starter.sh is distributed in the hope that it will be useful,	  #
+# xdaq-starter.sh is distributed in the hope that it will be useful,    #
 # but WITHOUT ANY WARRANTY; without even the implied warranty of        #
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
-# GNU General Public License for more details.                   	      #
+# GNU General Public License for more details.                          #
 #                                                                       #
-# You should have received a copy of the GNU General Public      	      #
-# License along with xdaq-starter.sh 					                          #
-# If not, see <http://www.gnu.org/licenses/> 				                    #
+# You should have received a copy of the GNU General Public             #
+# License along with xdaq-starter.sh                                    #
+# If not, see <http://www.gnu.org/licenses/>                            #
 #########################################################################
 
 
@@ -151,54 +151,54 @@ while :
 do
 	# Global variable to manage the Menu
 	MENU=(
-    	   " [ 1] Manage Eclipse project version    "
-	   " [ 2] Make Arduino Project from Eclipse "
-           " [ 3] Test Firmata Protocol             "
-	   ""
-	   " [99] Terminal                          "
-	   " [ 0] Exit                              "
+        " [ 1] Manage Eclipse project version    "
+        " [ 2] Make Arduino Project from Eclipse "
+        " [ 3] Test Firmata Protocol             "
+        ""
+        " [99] Terminal                          "
+        " [ 0] Exit                              "
 	)
 	Menu "\n [ XDAQ Tools ]"
 	nChoice=$?
 
 	case $nChoice in
 		0)	return ;;
-	 99)	gnome-terminal & ;;
+    99)	gnome-terminal & ;;
 		1) 	echo "[***] Import old Eclipse projects to current Arduino IDE."
-			  echo "Please specify full pathname of Eclipse project to update." ; sleep .3
-			  read -p "Which folder? " project
-			  echo
-			  $HOME_TOOLS/xdaq-eclipse-import.py $project
-			  ;;
-		2) 	echo "[***] Make Arduino projects from Eclipse IDE."
-			  echo "Please specify full pathname of the Eclipse cpp module to convert." ; sleep .3
-			  read -p "Which module? " module
-			  echo
-			  $HOME_TOOLS/xdaq-eclipse-make-ino.sh $module
-			  ;;
-		3) 	echo "[***] Test Firmata protocol from Python environment."
-			  echo "Use the Standard Firmata example from Arduino IDE"
-			  echo "to test the communication."
+        echo "Please specify full pathname of Eclipse project to update." ; sleep .3
+        read -p "Which folder? " project
+        echo
+        $HOME_TOOLS/xdaq-eclipse-import.py $project
+        ;;
+    2) 	echo "[***] Make Arduino projects from Eclipse IDE."
+        echo "Please specify full pathname of the Eclipse cpp module to convert." ; sleep .3
+        read -p "Which module? " module
+        echo
+        $HOME_TOOLS/xdaq-eclipse-make-ino.sh $module
+        ;;
+    3) 	echo "[***] Test Firmata protocol from Python environment."
+        echo "Use the Standard Firmata example from Arduino IDE"
+        echo "to test the communication."
 			
-			  echo
-			  echo "WARNING: Arduino board must be ready with a valid"
-		  	echo "         Firmata protocol implementation."
-		  	echo
+        echo
+        echo "WARNING: Arduino board must be ready with a valid"
+        echo "         Firmata protocol implementation."
+        echo
 
-			  GetArduinoHome
-			  if [ "$HOME_ARDUINO" != "" ];
-		  	then
-			  	# Open Arduino IDE to build the example
-				  OpenArduinoExample `find $HOME_ARDUINO -name StandardFirmata.ino`
+        GetArduinoHome
+        if [ "$HOME_ARDUINO" != "" ];
+        then
+            # Open Arduino IDE to build the example
+				    OpenArduinoExample `find $HOME_ARDUINO -name StandardFirmata.ino`
 				
-				  # Run Python test
-				  read -p "Press [Enter] to continue..." answer ; echo	
-				  $HOME_TOOLS/xdaq-test-firmata.py $COM
-			  fi
-			  ;;
+            # Run Python test
+            read -p "Press [Enter] to continue..." answer ; echo	
+            $HOME_TOOLS/xdaq-test-firmata.py $COM
+        fi
+        ;;
 
-		*)	echo "Error: Invalid option..."	;;
-	esac
+    *)	echo "Error: Invalid option..."	;;
+  esac
 done
 }
 
@@ -442,14 +442,14 @@ do
 	MENU=(
     	   " [ 1] XTable   > BlinkingLEDs        (Arduino)        "
     	   " [ 2] XTable   > BlinkingLEDs_of     (openFrameworks) "
-    	   " [ 3] XTable   > TestXTable          (Arduino)        "
-	       " [ 4] XEEPROM  > xeeprom_read        (Arduino)	      "
-	       " [ 5] Plotly   > Streaming demo      (Plotly)         "
-	       " [ 6] Waspmote > Waspmote Pro Demo   (Libelium)       "
-	       " [ 7] SODAQ    > Mbili Demo          (Sunbedded)      "
-	       ""
-	       " [ 0] Exit                                            "
-	)
+         " [ 3] XTable   > TestXTable          (Arduino)        "
+         " [ 4] XEEPROM  > xeeprom_read        (Arduino)	      "
+         " [ 5] Plotly   > Streaming demo      (Plotly)         "
+         " [ 6] Waspmote > Waspmote Pro Demo   (Libelium)       "
+         " [ 7] SODAQ    > Mbili Demo          (Sunbedded)      "
+         ""
+         " [ 0] Exit                                            "
+  )
 	Menu "\n [ XDAQ Examples ]"
 	nChoice=$?
 
@@ -575,28 +575,38 @@ then
 fi
 
 
+# Check XTable-Arduino project
+if [ ! -d $HOMEDEV/XDAQ/Projects/XTable-Arduino ];
+then
+    echo
+    echo "Add latest release of XTable-Arduino project..."
+    git clone git://github.com/misteralex/XTable-Arduino $HOMEDEV/XDAQ/Projects/XTable-Arduino
+    echo
+fi
+
+
 # Main Loop
 while :
 do
 	# Global variable to manage the Menu
 	MENU=(
-    	    " [ 1] XDAQ Setup    "
-	        " [ 2] XDAQ Tools    "
+          " [ 1] XDAQ Setup    "
+          " [ 2] XDAQ Tools    "
           " [ 3] XDAQ Examples "
-	        ""
-	        " [ 0] Exit   [ -1] Reboot"
-	)
+          ""
+          " [ 0] Exit   [ -1] Reboot"
+  )
 	Menu "\n [ XDAQ Starter ]"
 	nChoice=$?
 	
 	case $nChoice in
-	255)  VMReboot ;;
-		0)	exit ;;
-		1) 	XDAQSetup ;;
-		2)  XDAQTools ;;
-		3)	XDAQExamples ;;
+  255)  VMReboot ;;
+    0)  exit ;;
+    1)  XDAQSetup ;;
+    2)  XDAQTools ;;
+    3)  XDAQExamples ;;
 
-		*)	echo "Error: Invalid option..."	;;
+    *)  echo "Error: Invalid option..."	;;
 	esac
 done
 

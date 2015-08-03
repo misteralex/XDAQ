@@ -1,0 +1,2048 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 15:04:32 =~=~=~=~=~=~=~=~=~=~=~=
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+Id or Channel number? Check current device...
+Found device address: 287ABA240400005B
+Duplicated Id/>w
+Show all configured devices...
+
+158:all_deviceId/Channel
+0287ABA240400005BYes2
+
+*** Pr>n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option?to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option?ess <m> to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+Check current device...
+Found device address: 28AD53DD030000AB
+
+Device configured.
+
+*** Press <m> to show all avail>w
+
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+No devices configured.
+
+*** Press <m> to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+Which Id or Channel number? Check current device...
+Found device address: 28AD53DD030000AB
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option?>
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes3
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes3
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes3
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes3
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes3
+
+*** Press <m> to show all available options ***
+Which option?>a
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+028AD53DD030000ABYes3
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes3
+
+*** Press <m> to show all available options ***
+Which option?=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 15:12:59 =~=~=~=~=~=~=~=~=~=~=~=
+D$^!&L
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+Which Id or Channel number? Check current device...
+Found device address: 28AD53DD030000AB
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes2
+
+*** Press <m> to show all available options ***
+Which option?>a
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+028AD53DD030000ABYes2
+
+*** Press <m> to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+Which Id or Channel number? Check current device...
+Found device address: 287ABA240400005B
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=2
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABNo2
+1287ABA240400005BYes8
+
+*** Press <m> to show all available options ***
+Which option?>a
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+0287ABA240400005BYes8
+
+*** Press <m> to show all available options ***
+Which option?>r
+Which Id or Channel number? Device address to remove: 287ABA240400005B
+Device remove successfully
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABNo2
+
+*** Press <m> to show all available options ***
+Which option?>r
+Which Id or Channel number? Device address to remove: 28AD53DD030000AB
+Device remove successfully
+*** Press <m> to show all available options ***
+Which option?>w
+Show all configured devices...
+No devices configured.
+
+*** Press <m> to show all available options ***
+Which option?>a
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+0287ABA240400005BNo-
+
+*** Press <m> to show all available options ***
+Which option?>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option?=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 15:30:34 =~=~=~=~=~=~=~=~=~=~=~=
+
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+Which Id or Channel number? Check current device...
+Found device address: 287ABA240400005B
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option?>w
+
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+0287ABA240400005BYes12
+
+*** Press <m> to show all available options ***
+Which option?t2'=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 15:34:55 =~=~=~=~=~=~=~=~=~=~=~=
+I`N
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+Which Id or Channel number? Check current device...
+Found device address: 287ABA240400005B
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option?>w
+
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+0287ABA240400005BYes23
+
+*** Press <m> to show all available options ***
+Which option?=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 15:39:54 =~=~=~=~=~=~=~=~=~=~=~=
+2gI
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option?>1
+
+*** Press <m> to show all available options ***
+Which option?>2
+
+*** Press <m> to show all available options ***
+Which option?>n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 12
+Check current device...
+
+Found device address: 287ABA240400005B
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option?>w
+
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+0287ABA240400005BYes12
+
+*** Press <m> to show all available options ***
+Which option?>a
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+0287ABA240400005BYes12
+
+*** Press <m> to show all available options ***
+Which option?>w
+
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+0287ABA240400005BYes12
+
+*** Press <m> to show all available options ***
+Which option?=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 15:41:19 =~=~=~=~=~=~=~=~=~=~=~=
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***>w
+configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+0287ABA240400005B>w
+
+Show all configured devices...
+
+158:all_devices.Counter()=1
+
+IndexAddressConnecteYes12
+
+>w
+
+
+158:all_devices.Counter()=1
+
+IndexAddressConnectedId/Channel
+0287ABA240400005Ble options ***
+Which option?>w
+>w
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 16:30:07 =~=~=~=~=~=~=~=~=~=~=~=
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Chanel
+028CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 11
+Check current device...
+
+Found device address: 28CBD424040000D8
+
+Duplicated Id/Channel or device.
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Chanel
+028CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? >a
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+028CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? =~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 16:33:00 =~=~=~=~=~=~=~=~=~=~=~=
+"KI
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+>n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 0
+Check current device...
+
+Found device address: 28CBD424040000D8
+
+Duplicated Id/Channel or device.
+
+*** Press <m> to show all available options ***
+Which option? >1
+
+*** Press <m> to show all available options ***
+Which option? >2
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 1
+Check current device...
+
+Found device address: 28CBD424040000D8
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8Yes1
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8Yes1
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8Yes1
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8Yes1
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8Yes1
+
+*** Press <m> to show all available options ***
+Which option? =~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 16:35:37 =~=~=~=~=~=~=~=~=~=~=~=
+BY
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+>n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 12
+Check current device...
+
+Found device address: 28CBD424040000D8
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+028CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 34
+Check current device...
+
+Found device address: 289C2EDD030000F0
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8No12
+1289C2EDD030000F0Yes34
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes34
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8No12
+1289C2EDD030000F0Yes34
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 33
+Please specify a valid Id/Channel
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8No12
+1289C2EDD030000F0Yes34
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 34
+Device address to remove: 289C2EDD030000F0
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028CBD424040000D8No12
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 12
+Device address to remove: 28CBD424040000D8
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+No devices configured.
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0No-
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 4
+Check current device...
+
+Found device address: 289C2EDD030000F0
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 8
+Check current device...
+
+Found device address: 287ABA240400005B
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BYes8
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 12
+Check current device...
+
+Found device address: 28CBD424040000D8
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BNo8
+228CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 12
+Check current device...
+
+Found device address: 28AD53DD030000AB
+
+Duplicated Id/Channel or device.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BNo8
+228CBD424040000D8No12
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 16
+Check current device...
+
+Found device address: 28AD53DD030000AB
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BNo8
+228CBD424040000D8No12
+328AD53DD030000ABYes16
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >2
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BYes8
+228CBD424040000D8Yes12
+328AD53DD030000ABYes16
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BYes8
+228CBD424040000D8Yes12
+328AD53DD030000ABYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BYes8
+228CBD424040000D8Yes12
+328AD53DD030000ABYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BYes8
+228CBD424040000D8Yes12
+328AD53DD030000ABYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+1287ABA240400005BYes8
+228CBD424040000D8Yes12
+328AD53DD030000ABYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes8
+228CBD424040000D8Yes12
+328AD53DD030000ABYes16
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes8
+228AD53DD030000ABYes16
+328CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes8
+228AD53DD030000ABYes16
+328CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes8
+228AD53DD030000ABYes16
+328CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? >q
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes8
+228CBD424040000D8Yes12
+328AD53DD030000ABYes16
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes8
+228AD53DD030000ABYes16
+328CBD424040000D8Yes12
+
+*** Press <m> to show all available options ***
+Which option? 4
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Csole Mode ***
+
+>d
+
+*** Press <m> to show all available options ***
+Which option? >
+*** Start Console Mode ***
+
+>
+
+*** Press <m> to show all available options ***
+Which option? >F
+
+*** Press <m> to show all available options ***
+Which option? >
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+*** Start Console Mode ***
+
+>
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0No-
+1287ABA240400005BNo-
+228AD53DD030000ABNo-
+328CBD424040000D8No-
+
+*** Press <m> to show all available options ***
+Which option? >V
+
+*** Press <m> to show all available options ***
+Which option? >@
+
+*** Press <m> to show all available options ***
+Which option? >
+*** Start Console Mode ***
+
+>
+*** Start Console Mode ***
+
+>
+
+*** Press <m> to show all available options ***
+Which option? > 
+
+*** Press <m> to show all available options ***
+Which option? =~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 16:46:13 =~=~=~=~=~=~=~=~=~=~=~=
+&r3f
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+*** Start Console Mode ***
+
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+No devices configured.
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >1
+
+*** Press <m> to show all available options ***
+Which option? >2
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Please connect a device (only one)
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 3
+Check current device...
+
+Found device address: 289C2EDD030000F0
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes3
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes3
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 3
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes3
+1287ABA240400005BNo-
+228AD53DD030000ABNo-
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes3
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 6
+Check current device...
+
+Found device address: 287ABA240400005B
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No3
+1287ABA240400005BYes6
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+0287ABA240400005BYes6
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration *** 
+
+Which Id or Channel number? 9
+Check current device...
+
+Found device address: 28AD53DD030000AB
+
+Device configured.
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No3
+1287ABA240400005BNo6
+228AD53DD030000ABYes9
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+028AD53DD030000ABYes9
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes3
+1287ABA240400005BYes6
+228AD53DD030000ABYes9
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes3
+1287ABA240400005BYes6
+228AD53DD030000ABYes9
+328CBD424040000D8No-
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 12
+Please specify a valid Id/Channel
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes3
+1287ABA240400005BYes6
+228AD53DD030000ABYes9
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 6
+Device address to remove: 287ABA240400005B
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes3
+128AD53DD030000ABYes9
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 3
+Device address to remove: 289C2EDD030000F0
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes9
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 9
+Device address to remove: 28AD53DD030000AB
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+
+Show all configured devices...
+
+No devices configured.
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0No-
+1287ABA240400005BNo-
+228AD53DD030000ABNo-
+328CBD424040000D8No-
+
+*** Press <m> to show all available options ***
+Which option? =~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.03 17:17:27 =~=~=~=~=~=~=~=~=~=~=~=
+2cI
+
+
+*** Start XMultiTemp sketch ***
+Modbus protocol will starts within 10 sec.
+
+
+*** Start Console Mode ***
+>m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration ***
+
+*** Please connect a device (only one) ***
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration ***
+
+Which Id or Channel number? 4
+Check current device...
+
+Found device address: 289C2EDD030000F0
+
+Device configured
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration ***
+
+Which Id or Channel number? 8
+Check current device...
+
+Found device address: 28CBD424040000D8
+
+Device configured
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+128CBD424040000D8Yes8
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 1
+
+IndexAddressConfiguredId/Channel
+028CBD424040000D8Yes8
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration ***
+
+*** Please connect a device (only one) ***
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration ***
+
+Which Id or Channel number? 12
+Check current device...
+
+Found device address: 28AD53DD030000AB
+
+Device configured
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+128CBD424040000D8No8
+228AD53DD030000ABYes12
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration ***
+
+Which Id or Channel number? 8
+Check current device...
+
+Found device address: 287ABA240400005B
+*** Duplicated Id/Channel or device ***
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+128CBD424040000D8No8
+228AD53DD030000ABNo12
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration ***
+
+Which Id or Channel number? 16
+Check current device...
+
+Found device address: 287ABA240400005B
+
+Device configured
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+128CBD424040000D8No8
+228AD53DD030000ABNo12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8No8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+128CBD424040000D8No8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8No8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8No8
+228AD53DD030000ABNo12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABNo12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABNo12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+128CBD424040000D8Yes8
+228AD53DD030000ABNo12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABNo12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0No4
+128CBD424040000D8Yes8
+228AD53DD030000ABNo12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABNo12
+3287ABA240400005BNo16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABNo12
+3287ABA240400005BNo16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABYes12
+3287ABA240400005BNo16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABYes12
+3287ABA240400005BNo16
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes16
+228AD53DD030000ABYes12
+328CBD424040000D8Yes8
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes16
+228AD53DD030000ABYes12
+328CBD424040000D8Yes8
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes16
+228AD53DD030000ABYes12
+328CBD424040000D8Yes8
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >n
+
+*** Add new device to the current configuration ***
+
+*** Please connect a device (only one) ***
+
+*** Press <m> to show all available options ***
+Which option? >m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0Yes4
+1287ABA240400005BYes16
+228AD53DD030000ABYes12
+328CBD424040000D8Yes8
+
+*** Press <m> to show all available options ***
+Which option? >m
+
+Main Menu
+(m) - Show this menu
+(s) - Save configuration
+(l) - Load configuration
+(w) - Show configuration
+(p) - Play configuration
+(n) - Add new device
+(r) - Remove a device
+(a) - Show all connected devices
+(e) - Exit
+
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 133*** Please specify a valid Id/Channel ***
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 2*** Please specify a valid Id/Channel ***
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+0289C2EDD030000F0Yes4
+128CBD424040000D8Yes8
+228AD53DD030000ABYes12
+3287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 4Device address to remove: 289C2EDD030000F0
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+028CBD424040000D8Yes8
+128AD53DD030000ABYes12
+2287ABA240400005BYes16
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 16Device address to remove: 287ABA240400005B
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+028CBD424040000D8Yes8
+128AD53DD030000ABYes12
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 8Device address to remove: 28CBD424040000D8
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+IndexAddressConnectedId/Channel
+028AD53DD030000ABYes12
+
+*** Press <m> to show all available options ***
+Which option? >r
+
+Which Id or Channel number? 12Device address to remove: 28AD53DD030000AB
+Device remove successfully
+
+*** Press <m> to show all available options ***
+Which option? >w
+Show all configured devices...
+*** No devices configured ***
+
+*** Press <m> to show all available options ***
+Which option? >a
+
+Show all devices.connected to the bus...
+
+Number of devices: 4
+
+IndexAddressConfiguredId/Channel
+0289C2EDD030000F0No-
+1287ABA240400005BNo-
+228AD53DD030000ABNo-
+328CBD424040000D8No-
+
+*** Press <m> to show all available options ***
+Which option? >e
+
+*** Leave Console Mode ***
+*** Start Modbus Mode. ***
+
+

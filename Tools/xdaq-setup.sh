@@ -114,7 +114,7 @@ function InitPackagesStatus()
 	   "" "" "" "" "" "" "" "" "" "" "" ""  "" "" "" "" "" "" "" "" "" "" "" ""
 	   ""			 		""
 	   "[100] XDAQ Demo          "		""
-	   "" "" "" "" "" "" "" "" ""		"" "" "" "" "" "" "" "" ""
+	   "" "" "" "" "" "" "" "" ""	    "" "" "" "" "" "" "" "" ""
      "[110] Install XDAQ       "		""
 	   "[111] Install Debianinux "		""
 	   "[112] Install Libraries  "		""
@@ -123,7 +123,7 @@ function InitPackagesStatus()
 	   "" "" "" "" ""			"" "" "" "" ""
 	   "[120] Show Config        "		""
 	   "[121] Refresh Config     "		""
-  	 "[122] Serial Port        "		""
+     "[122] Serial Port        "		""
 	   "[123] Time Zone          "		""
 	   "[124] Keyboard           "		""
 	   "[125] XDAQ Panel         "		""
@@ -132,54 +132,54 @@ function InitPackagesStatus()
 	# Global variable to manage packages version
 	PKG_VER=(
 	"VMware Tools      "	""	""                  203	"vmware-toolbox-cmd"                               "vmware-toolbox-cmd -v"
-	"System info       "	""	""                  10	"uname"                                             "uname -v"
-	"GCC Toolchain     "  ""	""                  10	"gcc"                                               "gcc --version |grep gcc|awk -F' '  '{print \$4}'"	
+	"System info       "  ""	""                  10	"uname"                                             "uname -v"
+	"GCC Toolchain     "  ""  ""                  10	"gcc"                                               "gcc --version |grep gcc|awk -F' '  '{print \$4}'"	
 	"Gnome Desktop     "	""	""                  11	"gnome-session"                                     "dpkg -l|grep gnome-session-bin|awk -F' ' '{print \$3}'"
 	"Java              "	""	""                  12	"java"                                              "java -version 2>&1|grep \"java version\"|awk -F' ' '{print \$3}'|awk -F'\"' '{print \$2}'"
 	"Python            "	""	""                  12	"python"                                            "python -V 2>&1 |awk -F' ' '{print \$2}'"
 	"Sudo              "	""	""                  12	"sudo"                                              "sudo -V |grep \"Sudo version\"|awk -F' ' '{print \$3}'"
-	"SSH               "	""	""			            12	"ssh"                                               "ssh -V 2>&1|awk -F' ' '{print \$1}'"
-	"Serial Receiver   "	""	"$GNOME_SUPPORT"	  12	"cutecom"                                           "dpkg -l|grep cutecom|awk -F' ' '{print \$3}'"
-	"Git               "	""	""			            13	"git"                                               "git --version|awk -F' ' '{print \$3}'"
-	"Giggle            "	""	"$GNOME_SUPPORT"	  13	"giggle"                                            "dpkg -l|grep giggle|awk -F' ' '{print \$3}'"
-	"Arduino IDE       "	""	"$GNOME_SUPPORT"	  14	"arduino"                                           "echo $ARDUINOVER"
-	"Eclipse IDE       "	""	"$GNOME_SUPPORT"	  15	"eclipse"                                           "cat /opt/eclipse/.eclipseproduct |grep version|awk -F= '{print \$2}'"
+	"SSH               "	""	""                  12	"ssh"                                               "ssh -V 2>&1|awk -F' ' '{print \$1}'"
+	"Serial Receiver   "	""	"$GNOME_SUPPORT"    12	"cutecom"                                           "dpkg -l|grep cutecom|awk -F' ' '{print \$3}'"
+	"Git               "	""	""                  13	"git"                                               "git --version|awk -F' ' '{print \$3}'"
+	"Giggle            "	""	"$GNOME_SUPPORT"    13	"giggle"                                            "dpkg -l|grep giggle|awk -F' ' '{print \$3}'"
+	"Arduino IDE       "	""	"$GNOME_SUPPORT"    14	"arduino"                                           "echo $ARDUINOVER"
+	"Eclipse IDE       "	""	"$GNOME_SUPPORT"    15	"eclipse"                                           "cat /opt/eclipse/.eclipseproduct |grep version|awk -F= '{print \$2}'"
 
 	"Doxygen           "	""	""			            20	"doxygen"                                           "doxygen --version"		
-	"Texmaker          "	""	"$GNOME_SUPPORT"	  21	"texmaker"                                          "dpkg -l|grep texmaker-data|awk -F' ' '{print \$3}'"
-	"Fritzing          "	""	"$GNOME_SUPPORT"	  22	"fritzing"                                          "echo $FRITZINGVER"
-	"Processing        "	""	"$GNOME_SUPPORT"	  23	"processing"                                        "readlink -f `which processing` | awk -F/ '{print \$3}' | awk -F'-' '{print \$2}'"
-	"openFrameworks    "	""	"$GNOME_SUPPORT"	  24	"/opt/of_libs_openFrameworks"                       "echo $OFVER"
+	"Texmaker          "	""	"$GNOME_SUPPORT"    21	"texmaker"                                          "dpkg -l|grep texmaker-data|awk -F' ' '{print \$3}'"
+	"Fritzing          "	""	"$GNOME_SUPPORT"    22	"fritzing"                                          "echo $FRITZINGVER"
+	"Processing        "	""	"$GNOME_SUPPORT"    23	"processing"                                        "readlink -f `which processing` | awk -F/ '{print \$3}' | awk -F'-' '{print \$2}'"
+	"openFrameworks    "	""	"$GNOME_SUPPORT"    24	"/opt/of_libs_openFrameworks"                       "echo $OFVER"
 	"SQLite            "	""	""			            25	"sqlite3"                                           "sqlite3 --version|awk -F' ' '{print \$1}'"
-	"[SciPy] numpy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/numpy"            "dpkg -l|grep python-numpy|awk -F' ' '{print \$3}'"
-	"[SciPy] scipy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/scipy"            "dpkg -l|grep python-scipy|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
-	"[SciPy] matplotlib"	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/matplotlib"       "dpkg -l |grep python-matplotlib| grep i386 | awk -F' ' '{print \$3}'"
-	"[SciPy] ipython   "	""	"$PYTHON_SUPPORT"	  26	"ipython"                                           "exec ipython --version 2>&1"
-	"[SciPy] notebook  "	""	"$PYTHON_SUPPORT"	  26	"/usr/share/ipython/notebook"                       "dpkg -l|grep ipython-notebook-common|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
-	"[SciPy] pandas    "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/pandas"           "dpkg -l|grep python-pandas|grep i386|awk -F' ' '{print \$3}'"
-	"[SciPy] sympy     "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/sympy"            "dpkg -l|grep python-sympy|awk -F' ' '{print \$3}'"
-	"[SciPy] nose      "	""	"$PYTHON_SUPPORT"	  26	"/usr/lib/python2.7/dist-packages/nose"             "dpkg -l|grep python-nose|awk -F' ' '{print \$3}'"
-	"GNU Octave        "	""	"$GNOME_SUPPORT"	  27	"octave"                                            "octave --version 2>&1|grep \"GNU Octave\"|awk -F' ' '{print \$4}'"
-	"Gnuplot           "	""	"$GNOME_SUPPORT"	  28	"gnuplot"                                           "echo $GNUPLOTVER"
-	"GSL               "	""	"$GNOME_SUPPORT"	  29	"/usr/local/include/gsl"                            "echo $GSLVER"
-	"Scilab            "	""	"$GNOME_SUPPORT"	  30	"/usr/local/bin/scilab"                             "echo $SCILABVER"
-	"Qt                "	""	"$GNOME_SUPPORT"	  31	"designer-qt4"                                      "dpkg -l|grep qt4-dev-tools|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
+	"[SciPy] numpy     "	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/numpy"            "dpkg -l|grep python-numpy|awk -F' ' '{print \$3}'"
+	"[SciPy] scipy     "	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/scipy"            "dpkg -l|grep python-scipy|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
+	"[SciPy] matplotlib"	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/matplotlib"       "dpkg -l |grep python-matplotlib| grep i386 | awk -F' ' '{print \$3}'"
+	"[SciPy] ipython   "	""	"$PYTHON_SUPPORT"   26	"ipython"                                           "exec ipython --version 2>&1"
+	"[SciPy] notebook  "	""	"$PYTHON_SUPPORT"   26	"/usr/share/ipython/notebook"                       "dpkg -l|grep ipython-notebook-common|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
+	"[SciPy] pandas    "	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/pandas"           "dpkg -l|grep python-pandas|grep i386|awk -F' ' '{print \$3}'"
+	"[SciPy] sympy     "	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/sympy"            "dpkg -l|grep python-sympy|awk -F' ' '{print \$3}'"
+	"[SciPy] nose      "	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/nose"             "dpkg -l|grep python-nose|awk -F' ' '{print \$3}'"
+	"GNU Octave        "	""	"$GNOME_SUPPORT"    27	"octave"                                            "octave --version 2>&1|grep \"GNU Octave\"|awk -F' ' '{print \$4}'"
+	"Gnuplot           "	""	"$GNOME_SUPPORT"    28	"gnuplot"                                           "echo $GNUPLOTVER"
+	"GSL               "	""	"$GNOME_SUPPORT"    29	"/usr/local/include/gsl"                            "echo $GSLVER"
+	"Scilab            "	""	"$GNOME_SUPPORT"    30	"/usr/local/bin/scilab"                             "echo $SCILABVER"
+	"Qt                "	""	"$GNOME_SUPPORT"    31	"designer-qt4"                                      "dpkg -l|grep qt4-dev-tools|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
 
 	"ArduinoUnit       "  ""	"$ARDUINO_SUPPORT"  50	"$HOMEDEV/Arduino/libraries/arduinounit-master"     "echo $ARDUINOUNITVER"
-	"XTable            "  ""	"$ARDUINO_SUPPORT"	51	"$HOMEDEV/Arduino/libraries/XTable-Arduino"         "cat $HOMEDEV/Arduino/libraries/XTable-Arduino/library.properties 2>&1|grep version|awk -F'=' '{print \$2}'"
-	"pyFirmata         "	""	"$PYTHON_SUPPORT"	  52	"/usr/local/lib/python2.7/dist-packages/pyfirmata"  "exec pip freeze 2>&1 |grep -i pyFirmata|awk -F'==' '{print \$2}'"
-	"Plotly            "	""	"$ARDUINO_SUPPORT"	53	"/opt/plotly-arduino-api"                           "echo $PLOTLYVER"
-	"Node.js           "	""	""			            53	"node"                                              "echo $NODEJSVER"
+	"XTable            "  ""	"$ARDUINO_SUPPORT"  51	"$HOMEDEV/Arduino/libraries/XTable-Arduino"         "cat $HOMEDEV/Arduino/libraries/XTable-Arduino/library.properties 2>&1|grep version|awk -F'=' '{print \$2}'"
+	"pyFirmata         "	""	"$PYTHON_SUPPORT"   52	"/usr/local/lib/python2.7/dist-packages/pyfirmata"  "exec pip freeze 2>&1 |grep -i pyFirmata|awk -F'==' '{print \$2}'"
+	"Plotly            "	""	"$ARDUINO_SUPPORT"  53	"/opt/plotly-arduino-api"                           "echo $PLOTLYVER"
+	"Node.js           "	""	""                  53	"node"                                              "echo $NODEJSVER"
 
-	"Vim               "	""	"$GNOME_SUPPORT"	  70	"gvim"                                              "dpkg -l|grep vim-gnome|awk -F' ' '{print \$3}'"
-	"Xfig              "	""	"$GNOME_SUPPORT"	  71	"xfig"                                              "dpkg -l|grep xfig|grep i386|awk -F' ' '{print \$3}'"
-	"GNU Units         "	""	"$GNOME_SUPPORT"	  72	"units"                                             "dpkg -l|grep units|awk -F' ' '{print \$3}'"
-	"PuTTY             "	""	"$GNOME_SUPPORT"	  73	"putty"                                             "dpkg -l|grep putty-tools|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
-	"EAGLE PCB Design  "	""	"$GNOME_SUPPORT"	  74	"eagle"                                             "echo $EAGLEPCBVER"
+	"Vim               "	""	"$GNOME_SUPPORT"    70	"gvim"                                              "dpkg -l|grep vim-gnome|awk -F' ' '{print \$3}'"
+	"Xfig              "	""	"$GNOME_SUPPORT"    71	"xfig"                                              "dpkg -l|grep xfig|grep i386|awk -F' ' '{print \$3}'"
+	"GNU Units         "	""	"$GNOME_SUPPORT"    72	"units"                                             "dpkg -l|grep units|awk -F' ' '{print \$3}'"
+	"PuTTY             "	""	"$GNOME_SUPPORT"    73	"putty"                                             "dpkg -l|grep putty-tools|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
+	"EAGLE PCB Design  "	""	"$GNOME_SUPPORT"    74	"eagle"                                             "echo $EAGLEPCBVER"
 
-	"Libel. Waspmote   "	""	"$GNOME_SUPPORT"	  100	"waspmote"                                          "echo $LIB_WASPMOTEVER"
-	"Libel. Plug&Sense!"	""	"$GNOME_SUPPORT"	  100	"waspmote"                                          "echo $LIB_PLUGSENSEVER"
-	"Sunbe. SODAQ Mbili"	""	"$ARDUINO_SUPPORT"	100	"$HOMEDEV/Arduino/libraries/Sodaq"                  "echo $SUNBED_SODAQVER"
+	"Libel. Waspmote   "	""	"$GNOME_SUPPORT"    100	"waspmote"                                         "echo $LIB_WASPMOTEVER"
+	"Libel. Plug&Sense!"	""	"$GNOME_SUPPORT"    100	"waspmote"                                         "echo $LIB_PLUGSENSEVER"
+	"Sunbe. SODAQ Mbili"	""	"$ARDUINO_SUPPORT"  100	"$HOMEDEV/Arduino/libraries/Sodaq"                 "echo $SUNBED_SODAQVER"
 	)
 }
 
@@ -343,125 +343,125 @@ function DebianinuxInstaller()
 	TOTAL_PACKAGES=7
 	if [ "$1" != "" ]; then TOTAL_PACKAGES=$1 ; fi
 
-  	echo
-	  echo "This option will install Debianinux."
-  	echo
-  	echo "Debianinux includes:"
-  	echo "1. OS Update and Upgrade"
-  	echo "2. GNOME Desktop environment"
-  	echo "3. XDAQ Integrations"
-  	echo "3.1 Java Runtime Environment"
-  	echo "3.2 Python Environment and package management tools (pip and yolk)"
-  	echo "4, GitHub tools: Git and Giggle"
-  	echo "5. Arduino IDE"
-  	echo "6. Eclipse IDE"
-  	echo
+      echo
+      echo "This option will install Debianinux."
+      echo
+      echo "Debianinux includes:"
+      echo "1. OS Update and Upgrade"
+      echo "2. GNOME Desktop environment"
+      echo "3. XDAQ Integrations"
+      echo "3.1 Java Runtime Environment"
+      echo "3.2 Python Environment and package management tools (pip and yolk)"
+      echo "4, GitHub tools: Git and Giggle"
+      echo "5. Arduino IDE"
+      echo "6. Eclipse IDE"
+      echo
 
-		echo "Install Debianinux Substack"
-		UpdateSetupStatus 0 "Install Debianinux Substack"
+      echo "Install Debianinux Substack"
+      UpdateSetupStatus 0 "Install Debianinux Substack"
 
-		UpdateSetupStatus 1 "Install OS Update/Upgrade"
-		echo "Y"|Setup_OSUpdate
-		
-		UpdateSetupStatus 2 "Install GNOME Desktop environment"
-		echo "Y"|Setup_GNOME ${XDAQ_MENU[23]}
-		CheckMainEnvironments
+      UpdateSetupStatus 1 "Install OS Update/Upgrade"
+      echo "Y"|Setup_OSUpdate
 
-		UpdateSetupStatus 3 "Install XDAQ Integrations: sudo, serial receiver and easy user access"
-		echo "Y"|Setup_Integrations ${XDAQ_MENU[25]}
-		CheckMainEnvironments
+      UpdateSetupStatus 2 "Install GNOME Desktop environment"
+      echo "Y"|Setup_GNOME ${XDAQ_MENU[23]}
+      CheckMainEnvironments
 
-		UpdateSetupStatus 4 "Install Git Tools: Git terminal tool and Giggle"
-		echo "Y"|Setup_GitTools ${XDAQ_MENU[27]}
+      UpdateSetupStatus 3 "Install XDAQ Integrations: sudo, serial receiver and easy user access"
+      echo "Y"|Setup_Integrations ${XDAQ_MENU[25]}
+      CheckMainEnvironments
 
-		UpdateSetupStatus 5 "Install Arduino IDE version $ARDUINOVER"
-		echo "Y"|Setup_ArduinoIDE ${XDAQ_MENU[29]}
-		CheckMainEnvironments
+      UpdateSetupStatus 4 "Install Git Tools: Git terminal tool and Giggle"
+      echo "Y"|Setup_GitTools ${XDAQ_MENU[27]}
 
-		UpdateSetupStatus 6 "Install Eclipse IDE (Luna release)"
-		Setup_EclipseIDE ${XDAQ_MENU[31]}
+      UpdateSetupStatus 5 "Install Arduino IDE version $ARDUINOVER"
+      echo "Y"|Setup_ArduinoIDE ${XDAQ_MENU[29]}
+      CheckMainEnvironments
 
-		# Customize Debianinux Desktop (add desktop background)
-		cp -f $HOMEDEV/XDAQ/Admin/debianinux-background_1* /usr/share/images/desktop-base
-		cp -f $HOMEDEV/XDAQ/Admin/debianinux-desktop-background.xml /usr/share/images/desktop-base/desktop-background.xml
+      UpdateSetupStatus 6 "Install Eclipse IDE (Luna release)"
+      Setup_EclipseIDE ${XDAQ_MENU[31]}
 
-		UpdateSetupStatus 7 "Debianinux Installation Completed"
-		echo -e "\n*** Debianinux Installation Completed ***\n"
-		echo "Please reboot the system when complete setup of"
-		echo -e "your XDAQ environment.\n"
+      # Customize Debianinux Desktop (add desktop background)
+      cp -f $HOMEDEV/XDAQ/Admin/debianinux-background_1* /usr/share/images/desktop-base
+      cp -f $HOMEDEV/XDAQ/Admin/debianinux-desktop-background.xml /usr/share/images/desktop-base/desktop-background.xml
+
+      UpdateSetupStatus 7 "Debianinux Installation Completed"
+      echo -e "\n*** Debianinux Installation Completed ***\n"
+      echo "Please reboot the system when complete setup of"
+      echo -e "your XDAQ environment.\n"
 }
 
 
 # XDAQ Auto Installer
 function XDAQInstaller()
-{	
+{
   # Set global variable about progress status indicator
-	TOTAL_PACKAGES=27
+  TOTAL_PACKAGES=27
 
-	echo
-	echo "This option will install all XDAQ packages."
-	echo
-	echo "XDAQ v$XDAQVER includes:"
-	echo "1. Debianinux"
-	echo "2. XDAQ Core"
-	echo "3. XDAQ Core - Libraries"
+  echo
+  echo "This option will install all XDAQ packages."
+  echo
+  echo "XDAQ v$XDAQVER includes:"
+  echo "1. Debianinux"
+  echo "2. XDAQ Core"
+  echo "3. XDAQ Core - Libraries"
 
-	echo -n "[SETUP] Install XDAQ " ; sleep .3
-	read -e -i Y -p "(Y/n)? " ; echo
-	if [[ $REPLY =~ ^[Yy]$ ]];
-	then
-	  	UpdateSetupStatus 0 "Install XDAQ Stack v$XDAQVER"
-	  	echo "Install XDAQ Stack v$XDAQVER"
+  echo -n "[SETUP] Install XDAQ " ; sleep .3
+  read -e -i Y -p "(Y/n)? " ; echo
+  if [[ $REPLY =~ ^[Yy]$ ]];
+  then
+      UpdateSetupStatus 0 "Install XDAQ Stack v$XDAQVER"
+      echo "Install XDAQ Stack v$XDAQVER"
 
-		  DebianinuxInstaller $TOTAL_PACKAGES
-		
-  		UpdateSetupStatus 8 "Install Doxygen"
-  		echo "Y"|Setup_Doxygen ${XDAQ_MENU[41]}
+      DebianinuxInstaller $TOTAL_PACKAGES
 
-	  	UpdateSetupStatus 9 "Install Texmaker"
-	  	Setup_Texmaker ${XDAQ_MENU[43]}
+      UpdateSetupStatus 8 "Install Doxygen"
+      echo "Y"|Setup_Doxygen ${XDAQ_MENU[41]}
 
-		  UpdateSetupStatus 10 "Install Fritzing"
-		  echo "Y"|Setup_Fritzing ${XDAQ_MENU[45]}
+      UpdateSetupStatus 9 "Install Texmaker"
+      Setup_Texmaker ${XDAQ_MENU[43]}
 
-	  	UpdateSetupStatus 11 "Install Processing"
-	  	echo "Y"|Setup_Processing ${XDAQ_MENU[47]}
+      UpdateSetupStatus 10 "Install Fritzing"
+      echo "Y"|Setup_Fritzing ${XDAQ_MENU[45]}
 
-		  UpdateSetupStatus 12 "Install openFrameworks"
-		  echo "Y"|Setup_openFrameworks ${XDAQ_MENU[49]}
+      UpdateSetupStatus 11 "Install Processing"
+      echo "Y"|Setup_Processing ${XDAQ_MENU[47]}
 
-		  UpdateSetupStatus 13 "Install SQLite"
-		  echo "Y"|Setup_SQLite ${XDAQ_MENU[51]}
+      UpdateSetupStatus 12 "Install openFrameworks"
+      echo "Y"|Setup_openFrameworks ${XDAQ_MENU[49]}
 
-		  UpdateSetupStatus 14 "Install SciPy Stack"
-	  	echo "Y"|Setup_SciPyStack ${XDAQ_MENU[53]}
+      UpdateSetupStatus 13 "Install SQLite"
+      echo "Y"|Setup_SQLite ${XDAQ_MENU[51]}
 
-	  	UpdateSetupStatus 15 "Install GNU Octave"
-	  	echo "Y"|Setup_GNUOctave ${XDAQ_MENU[55]}
-		
-	  	UpdateSetupStatus 16 "Install Gnuplot"
-	  	echo "Y"|Setup_Gnuplot ${XDAQ_MENU[57]}
+      UpdateSetupStatus 14 "Install SciPy Stack"
+      echo "Y"|Setup_SciPyStack ${XDAQ_MENU[53]}
 
-		  UpdateSetupStatus 17 "Install GSL"
-		  echo "Y"|Setup_GSL ${XDAQ_MENU[59]}
+      UpdateSetupStatus 15 "Install GNU Octave"
+      echo "Y"|Setup_GNUOctave ${XDAQ_MENU[55]}
 
-		  UpdateSetupStatus 18 "Install Scilab"
-  		echo "Y"|Setup_Scilab ${XDAQ_MENU[61]}
+      UpdateSetupStatus 16 "Install Gnuplot"
+      echo "Y"|Setup_Gnuplot ${XDAQ_MENU[57]}
 
-	  	UpdateSetupStatus 19 "Install Qt"
-	  	echo "Y"|Setup_Qt ${XDAQ_MENU[63]}
+      UpdateSetupStatus 17 "Install GSL"
+      echo "Y"|Setup_GSL ${XDAQ_MENU[59]}
 
-		  XDAQLibrariesInstaller $TOTAL_PACKAGES "20"
+      UpdateSetupStatus 18 "Install Scilab"
+      echo "Y"|Setup_Scilab ${XDAQ_MENU[61]}
 
-	  	# Customize XDAQ Desktop (add desktop background)
-	  	cp -f $HOMEDEV/XDAQ/Admin/xdaq-background_1* /usr/share/images/desktop-base
-	  	cp -f $HOMEDEV/XDAQ/Admin/xdaq-desktop-background.xml /usr/share/images/desktop-base/desktop-background.xml
-  
-		  UpdateSetupStatus 27 "XDAQ Installation Completed"
-		  echo -e "\n*** XDAQ Installation Completed ***\n"
-		  echo "Please reboot the system when complete setup of"
-		  echo -e "your XDAQ environment.\n"
-	fi
+      UpdateSetupStatus 19 "Install Qt"
+      echo "Y"|Setup_Qt ${XDAQ_MENU[63]}
+
+      XDAQLibrariesInstaller $TOTAL_PACKAGES "20"
+
+      # Customize XDAQ Desktop (add desktop background)
+      cp -f $HOMEDEV/XDAQ/Admin/xdaq-background_1* /usr/share/images/desktop-base
+      cp -f $HOMEDEV/XDAQ/Admin/xdaq-desktop-background.xml /usr/share/images/desktop-base/desktop-background.xml
+
+      UpdateSetupStatus 27 "XDAQ Installation Completed"
+      echo -e "\n*** XDAQ Installation Completed ***\n"
+      echo "Please reboot the system when complete setup of"
+      echo -e "your XDAQ environment.\n"
+fi
 }
 
 
@@ -610,46 +610,46 @@ then
 
 	
 	# USER ACCESS AND CONFIGURATION
-	  # Easy access through xdaq-starter.sh tool
-	  echo "[SETUP] Manage XDAQ access and configuration"
-	  cp -f $HOMEDEV/XDAQ/Admin/.bashrc /root/.bashrc 
- 	  cp -f $HOMEDEV/XDAQ/Admin/xdaq-starter.desktop $GNOME_SHARE_APPS
-	  cp -f $HOMEDEV/XDAQ/Admin/xdaq-starter-logo.png $GNOME_SHARE_ICONS
+	# Easy access through xdaq-starter.sh tool
+	echo "[SETUP] Manage XDAQ access and configuration"
+	cp -f $HOMEDEV/XDAQ/Admin/.bashrc /root/.bashrc 
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-starter.desktop $GNOME_SHARE_APPS
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-starter-logo.png $GNOME_SHARE_ICONS
 
-	  # Easy Desktop Access
-	  if [ ! -d $HOMEDEV/Desktop ]; then mkdir $HOMEDEV/Desktop ; fi
-	  cp -f $HOMEDEV/XDAQ/Admin/xdaq-panel.desktop $GNOME_SHARE_APPS/panel.desktop
-	  cp -f $HOMEDEV/XDAQ/Admin/xdaq-panel.desktop $HOMEDEV/Desktop/panel.desktop
-	  cp -f $HOMEDEV/XDAQ/Admin/xdaq-gnome-terminal.desktop $GNOME_SHARE_APPS
-	  ln -sf $HOMEDEV/XDAQ/Tools/xdaq-starter.sh $HOMEDEV
+	# Easy Desktop Access
+	if [ ! -d $HOMEDEV/Desktop ]; then mkdir $HOMEDEV/Desktop ; fi
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-panel.desktop $GNOME_SHARE_APPS/panel.desktop
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-panel.desktop $HOMEDEV/Desktop/panel.desktop
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-gnome-terminal.desktop $GNOME_SHARE_APPS
+	ln -sf $HOMEDEV/XDAQ/Tools/xdaq-starter.sh $HOMEDEV
 
-	  # customize xterm icon
-	  cp -f $HOMEDEV/XDAQ/Admin/xdaq-starter-logo.png /usr/share/icons/hicolor/scalable/apps/xterm-color.svg
-	  cp -f $HOMEDEV/XDAQ/Admin/xdaq-starter-logo.png /usr/share/icons/hicolor/48x48/apps/xterm-color.png
+	# customize xterm icon
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-starter-logo.png /usr/share/icons/hicolor/scalable/apps/xterm-color.svg
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-starter-logo.png /usr/share/icons/hicolor/48x48/apps/xterm-color.png
 
-	  # Fix user configuration and browser access
-	  if [[ "`which iceweasel`" == "" && "`which firefox`" ]]; then ln -s /usr/bin/firefox /usr/bin/iceweasel ; fi
+	# Fix user configuration and browser access
+	if [[ "`which iceweasel`" == "" && "`which firefox`" ]]; then ln -s /usr/bin/firefox /usr/bin/iceweasel ; fi
 
 
-	  SetSerialPort
- 	  Setup_CuteCom
+	SetSerialPort
+	Setup_CuteCom
 
-	  # SSH Connection
-	  echo -e "\n[SETUP] Install SSH tool for remote management"
-	  apt-get --yes --force-yes -f install
-	  apt-get --yes --force-yes --reinstall install ssh
+	# SSH Connection
+	echo -e "\n[SETUP] Install SSH tool for remote management"
+	apt-get --yes --force-yes -f install
+	apt-get --yes --force-yes --reinstall install ssh
 
-	  # Java and Python
-	  Setup_Java
-	  Setup_Python
+	# Java and Python
+	Setup_Java
+	Setup_Python
 
-	  # Minor Pakcages
-	  apt-get --yes --force-yes --reinstall install xterm
-	  apt-get --yes --force-yes --reinstall install cmake
-	  apt-get --reinstall install ntp
+	# Minor Pakcages
+	apt-get --yes --force-yes --reinstall install xterm
+	apt-get --yes --force-yes --reinstall install cmake
+	apt-get --reinstall install ntp
 	
 else
-	  echo "[Integrations] already installed."
+	echo "[Integrations] already installed."
 fi
 }
 
@@ -713,7 +713,7 @@ then
   	apt-get --yes --force-yes -f install
   	apt-get --yes --force-yes --reinstall install git
 
-	  if [ ! -z "`which gnome-session`" ];
+  	if [ ! -z "`which gnome-session`" ];
   	then
   		apt-get --yes --force-yes --reinstall install giggle
   		ConfigGnomeMenu giggle
@@ -1638,122 +1638,122 @@ CHECK_CONFIG=1
 # Main Loop
 while :
 do
-	# Check current installation status of some critical packages
-	if [[ $CHECK_CONFIG == 1 ]]; then CheckConfig ; fi
+  # Check current installation status of some critical packages
+  if [[ $CHECK_CONFIG == 1 ]]; then CheckConfig ; fi
 
-	# Show Main Menu
-	echo -e "\n\n[ XDAQ Setup ]   [Host IP `ifconfig |awk -F' ' '/Bcast/ {print $2}'`]\n"
-	
-	echo -e "\e[4mXDAQ Core - Debianinux                                                       \e[0m"
-	echo -e "${XDAQ_MENU[20]} ${XDAQ_MENU[22]} ${XDAQ_MENU[24]}"
-	echo -e "${XDAQ_MENU[26]} ${XDAQ_MENU[28]} ${XDAQ_MENU[30]}"
+  # Show Main Menu
+  echo -e "\n\n[ XDAQ Setup ]   [Host IP `ifconfig |awk -F' ' '/Bcast/ {print $2}'`]\n"
 
-	echo -e "\e[4mXDAQ Core                                                                    \e[0m"
-	echo -e "${XDAQ_MENU[40]} ${XDAQ_MENU[42]} ${XDAQ_MENU[44]}"
-	echo -e "${XDAQ_MENU[46]} ${XDAQ_MENU[48]} ${XDAQ_MENU[50]}"
-	echo -e "${XDAQ_MENU[52]} ${XDAQ_MENU[54]} ${XDAQ_MENU[56]}"
-	echo -e "${XDAQ_MENU[58]} ${XDAQ_MENU[60]} ${XDAQ_MENU[62]}"
+  echo -e "\e[4mXDAQ Core - Debianinux                                                       \e[0m"
+  echo -e "${XDAQ_MENU[20]} ${XDAQ_MENU[22]} ${XDAQ_MENU[24]}"
+  echo -e "${XDAQ_MENU[26]} ${XDAQ_MENU[28]} ${XDAQ_MENU[30]}"
 
-	echo -e "\e[4mXDAQ Core - Libraries                                                        \e[0m"
-	echo -e "${XDAQ_MENU[100]} ${XDAQ_MENU[102]} ${XDAQ_MENU[104]}"
-	echo -e "${XDAQ_MENU[106]}"
+  echo -e "\e[4mXDAQ Core                                                                    \e[0m"
+  echo -e "${XDAQ_MENU[40]} ${XDAQ_MENU[42]} ${XDAQ_MENU[44]}"
+  echo -e "${XDAQ_MENU[46]} ${XDAQ_MENU[48]} ${XDAQ_MENU[50]}"
+  echo -e "${XDAQ_MENU[52]} ${XDAQ_MENU[54]} ${XDAQ_MENU[56]}"
+  echo -e "${XDAQ_MENU[58]} ${XDAQ_MENU[60]} ${XDAQ_MENU[62]}"
 
-	echo -e "\e[4mXDAQ Optional                                                                \e[0m"
-	echo -e "${XDAQ_MENU[140]} ${XDAQ_MENU[142]} ${XDAQ_MENU[144]}"
-	echo -e "${XDAQ_MENU[146]} ${XDAQ_MENU[148]} ${XDAQ_MENU[200]} "
+  echo -e "\e[4mXDAQ Core - Libraries                                                        \e[0m"
+  echo -e "${XDAQ_MENU[100]} ${XDAQ_MENU[102]} ${XDAQ_MENU[104]}"
+  echo -e "${XDAQ_MENU[106]}"
 
-	echo -e "\e[4mXDAQ Management Tools                                                        \e[0m"
-	echo -e "${XDAQ_MENU[220]} ${XDAQ_MENU[222]} ${XDAQ_MENU[224]}"
-	echo -e "${XDAQ_MENU[226]} ${XDAQ_MENU[228]} ${XDAQ_MENU[240]}"
-	echo -e "${XDAQ_MENU[242]} ${XDAQ_MENU[244]} ${XDAQ_MENU[246]}"
-	echo -e "${XDAQ_MENU[248]} ${XDAQ_MENU[250]} ${XDAQ_MENU[0]}"
+  echo -e "\e[4mXDAQ Optional                                                                \e[0m"
+  echo -e "${XDAQ_MENU[140]} ${XDAQ_MENU[142]} ${XDAQ_MENU[144]}"
+  echo -e "${XDAQ_MENU[146]} ${XDAQ_MENU[148]} ${XDAQ_MENU[200]} "
 
-	echo ; sleep .5
-	read -p "Which setup operation? " nSetup
-	echo
+  echo -e "\e[4mXDAQ Management Tools                                                        \e[0m"
+  echo -e "${XDAQ_MENU[220]} ${XDAQ_MENU[222]} ${XDAQ_MENU[224]}"
+  echo -e "${XDAQ_MENU[226]} ${XDAQ_MENU[228]} ${XDAQ_MENU[240]}"
+  echo -e "${XDAQ_MENU[242]} ${XDAQ_MENU[244]} ${XDAQ_MENU[246]}"
+  echo -e "${XDAQ_MENU[248]} ${XDAQ_MENU[250]} ${XDAQ_MENU[0]}"
+
+  echo ; sleep .5
+  read -p "Which setup operation? " nSetup
+  echo
 
   # Run required setup
-	setup_function=""
-	case $nSetup in
-   -1)  VMReboot ;;
-		0)	exit ;;
-		
-		10) setup_function="Setup_OSUpdate 'REBOOT'" ;;
-		11) setup_function="Setup_GNOME" ;;
-		12)	setup_function="Setup_Integrations" ;;
-		13)	setup_function="Setup_GitTools" ;;
-		14) setup_function="Setup_ArduinoIDE" ;;
-		15)	setup_function="Setup_EclipseIDE" ;;
+  setup_function=""
+  case $nSetup in
+    -1) VMReboot ;;
+     0) exit ;;
 
-		20)	setup_function="Setup_Doxygen" ;;
-		21) setup_function="Setup_Texmaker" ;;
-		22)	setup_function="Setup_Fritzing" ;;
-		23)	setup_function="Setup_Processing" ;;
-		24) setup_function="Setup_openFrameworks" ;;
-		25) setup_function="Setup_SQLite" ;;
-		26) setup_function="Setup_SciPyStack" ;; 
-		27)	setup_function="Setup_GNUOctave" ;;
-		28) setup_function="Setup_Gnuplot" ;;
-		29) setup_function="Setup_GSL" ;;
-		30) setup_function="Setup_Scilab" ;;
-		31)	setup_function="Setup_Qt" ;;
+    10) setup_function="Setup_OSUpdate 'REBOOT'" ;;
+    11) setup_function="Setup_GNOME" ;;
+    12) setup_function="Setup_Integrations" ;;
+    13) setup_function="Setup_GitTools" ;;
+    14) setup_function="Setup_ArduinoIDE" ;;
+    15) setup_function="Setup_EclipseIDE" ;;
 
-		50)	setup_function="Setup_ArduinoUnit" ;;
-		51) setup_function="Setup_XTable" ;;
-		52)	setup_function="Setup_pyFirmata" ;;
-		53)	setup_function="Setup_Plotly" ;;
+    20) setup_function="Setup_Doxygen" ;;
+    21) setup_function="Setup_Texmaker" ;;
+    22) setup_function="Setup_Fritzing" ;;
+    23) setup_function="Setup_Processing" ;;
+    24) setup_function="Setup_openFrameworks" ;;
+    25) setup_function="Setup_SQLite" ;;
+    26) setup_function="Setup_SciPyStack" ;; 
+    27) setup_function="Setup_GNUOctave" ;;
+    28) setup_function="Setup_Gnuplot" ;;
+    29) setup_function="Setup_GSL" ;;
+    30) setup_function="Setup_Scilab" ;;
+    31) setup_function="Setup_Qt" ;;
 
-		70)	setup_function="Setup_gVim" ;;
-		71)	setup_function="Setup_Xfig" ;;
-		72)	setup_function="Setup_GNUUnits" ;;
-		73)	setup_function="Setup_PuTTY" ;;
-		74)	setup_function="Setup_EAGLE" ;;
-		
-	 100) setup_function="Setup_Demo" ;;
-		
-	 110) setup_function="XDAQInstaller" ;;
-	 111) setup_function="DebianinuxInstaller" ;;
-	 112)	setup_function="XDAQLibrariesInstaller" ;;
-	 113)	setup_function="XDAQOptionalInstaller" ;;
-	 114)	setup_function="Setup_VMwareTools" ;;
-	 120) ShowConfig ;;
-	 121) CheckConfig ;;
-	 122)	SetSerialPort ;;
-	 123)	SetTimeZone ;;
-	 124)	SetKeyboard ;;
-	 125) ShowPanel ;;
+    50) setup_function="Setup_ArduinoUnit" ;;
+    51) setup_function="Setup_XTable" ;;
+    52) setup_function="Setup_pyFirmata" ;;
+    53) setup_function="Setup_Plotly" ;;
 
-		 *)	echo "Error: Invalid option..."	;;
-	esac
+    70) setup_function="Setup_gVim" ;;
+    71) setup_function="Setup_Xfig" ;;
+    72) setup_function="Setup_GNUUnits" ;;
+    73) setup_function="Setup_PuTTY" ;;
+    74) setup_function="Setup_EAGLE" ;;
+
+   100) setup_function="Setup_Demo" ;;
+
+   110) setup_function="XDAQInstaller" ;;
+   111) setup_function="DebianinuxInstaller" ;;
+   112) setup_function="XDAQLibrariesInstaller" ;;
+   113) setup_function="XDAQOptionalInstaller" ;;
+   114) setup_function="Setup_VMwareTools" ;;
+   120) ShowConfig ;;
+   121) CheckConfig ;;
+   122) SetSerialPort ;;
+   123) SetTimeZone ;;
+   124) SetKeyboard ;;
+   125) ShowPanel ;;
+
+     *) echo "Error: Invalid option..."	;;
+esac
 
 
-	if [[ "$setup_function" != "" ]];
-	then
-		setup_option=`echo ${XDAQ_MENU[$(($nSetup*2))]}`
-		setup_option=${setup_option##*]}
-		setup_option=${setup_option%\\*}
-		setup_option=`echo ${setup_option}`
+if [[ "$setup_function" != "" ]];
+then
+    setup_option=`echo ${XDAQ_MENU[$(($nSetup*2))]}`
+    setup_option=${setup_option##*]}
+    setup_option=${setup_option%\\*}
+    setup_option=`echo ${setup_option}`
 
-		echo -e "\n[--------------------------------------------------]" >> $XDAQ_LOG_FILE
-		date +"[SETUP:$nSetup] [%Y-%m-%d %H:%M] [$setup_option]" >> $XDAQ_LOG_FILE
-		echo -e "[--------------------------------------------------]\n" >> $XDAQ_LOG_FILE
+    echo -e "\n[--------------------------------------------------]" >> $XDAQ_LOG_FILE
+    date +"[SETUP:$nSetup] [%Y-%m-%d %H:%M] [$setup_option]" >> $XDAQ_LOG_FILE
+    echo -e "[--------------------------------------------------]\n" >> $XDAQ_LOG_FILE
 
-		echo -n "[SETUP:$nSetup] Confirm [$setup_option] Installation " ; sleep .3
-		read -e -i Y -p "(Y/n)? " ; echo
-		if [[ $REPLY =~ ^[Nn]$ ]];
-		then
-			echo "***Process Aborted***"  >> $XDAQ_LOG_FILE
-			echo
-		else
-			CHECK_CONFIG=1
-			echo -e "[SETUP:$nSetup] Install [$setup_option]"
-			$setup_function | tee -a $XDAQ_LOG_FILE
-			CheckMainEnvironments
-		fi
+    echo -n "[SETUP:$nSetup] Confirm [$setup_option] Installation " ; sleep .3
+    read -e -i Y -p "(Y/n)? " ; echo
+    if [[ $REPLY =~ ^[Nn]$ ]];
+    then
+        echo "***Process Aborted***"  >> $XDAQ_LOG_FILE
+        echo
+    else
+        CHECK_CONFIG=1
+        echo -e "[SETUP:$nSetup] Install [$setup_option]"
+        $setup_function | tee -a $XDAQ_LOG_FILE
+        CheckMainEnvironments
+    fi
 
-		echo ; sleep .3
-	 	read -p "Operation completed. Press [Enter] to continue..." readEnterKey
-	fi
+    echo ; sleep .3
+    read -p "Operation completed. Press [Enter] to continue..." readEnterKey
+fi
 
 done
 
