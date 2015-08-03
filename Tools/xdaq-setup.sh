@@ -114,7 +114,7 @@ function InitPackagesStatus()
 	   "" "" "" "" "" "" "" "" "" "" "" ""  "" "" "" "" "" "" "" "" "" "" "" ""
 	   ""			 		""
 	   "[100] XDAQ Demo          "		""
-	   "" "" "" "" "" "" "" "" ""     "" "" "" "" "" "" "" "" ""
+	   "" "" "" "" "" "" "" "" ""		"" "" "" "" "" "" "" "" ""
      "[110] Install XDAQ       "		""
 	   "[111] Install Debianinux "		""
 	   "[112] Install Libraries  "		""
@@ -132,8 +132,8 @@ function InitPackagesStatus()
 	# Global variable to manage packages version
 	PKG_VER=(
 	"VMware Tools      "	""	""                  203	"vmware-toolbox-cmd"                                "vmware-toolbox-cmd -v"
-	"System info       "  ""	""                  10	"uname"                                             "uname -v"
-	"GCC Toolchain     "  ""  ""                  10	"gcc"                                               "gcc --version |grep gcc|awk -F' '  '{print \$4}'"	
+	"System info       "	""	""                  10	"uname"                                             "uname -v"
+	"GCC Toolchain     "	""	""                  10	"gcc"                                               "gcc --version |grep gcc|awk -F' '  '{print \$4}'"	
 	"Gnome Desktop     "	""	""                  11	"gnome-session"                                     "dpkg -l|grep gnome-session-bin|awk -F' ' '{print \$3}'"
 	"Java              "	""	""                  12	"java"                                              "java -version 2>&1|grep \"java version\"|awk -F' ' '{print \$3}'|awk -F'\"' '{print \$2}'"
 	"Python            "	""	""                  12	"python"                                            "python -V 2>&1 |awk -F' ' '{print \$2}'"
