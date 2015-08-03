@@ -114,7 +114,7 @@ function InitPackagesStatus()
 	   "" "" "" "" "" "" "" "" "" "" "" ""  "" "" "" "" "" "" "" "" "" "" "" ""
 	   ""			 		""
 	   "[100] XDAQ Demo          "		""
-	   "" "" "" "" "" "" "" "" ""	    "" "" "" "" "" "" "" "" ""
+	   "" "" "" "" "" "" "" "" ""     "" "" "" "" "" "" "" "" ""
      "[110] Install XDAQ       "		""
 	   "[111] Install Debianinux "		""
 	   "[112] Install Libraries  "		""
@@ -131,7 +131,7 @@ function InitPackagesStatus()
 
 	# Global variable to manage packages version
 	PKG_VER=(
-	"VMware Tools      "	""	""                  203	"vmware-toolbox-cmd"                               "vmware-toolbox-cmd -v"
+	"VMware Tools      "	""	""                  203	"vmware-toolbox-cmd"                                "vmware-toolbox-cmd -v"
 	"System info       "  ""	""                  10	"uname"                                             "uname -v"
 	"GCC Toolchain     "  ""  ""                  10	"gcc"                                               "gcc --version |grep gcc|awk -F' '  '{print \$4}'"	
 	"Gnome Desktop     "	""	""                  11	"gnome-session"                                     "dpkg -l|grep gnome-session-bin|awk -F' ' '{print \$3}'"
@@ -145,12 +145,12 @@ function InitPackagesStatus()
 	"Arduino IDE       "	""	"$GNOME_SUPPORT"    14	"arduino"                                           "echo $ARDUINOVER"
 	"Eclipse IDE       "	""	"$GNOME_SUPPORT"    15	"eclipse"                                           "cat /opt/eclipse/.eclipseproduct |grep version|awk -F= '{print \$2}'"
 
-	"Doxygen           "	""	""			            20	"doxygen"                                           "doxygen --version"		
+	"Doxygen           "	""	""                  20	"doxygen"                                           "doxygen --version"		
 	"Texmaker          "	""	"$GNOME_SUPPORT"    21	"texmaker"                                          "dpkg -l|grep texmaker-data|awk -F' ' '{print \$3}'"
 	"Fritzing          "	""	"$GNOME_SUPPORT"    22	"fritzing"                                          "echo $FRITZINGVER"
 	"Processing        "	""	"$GNOME_SUPPORT"    23	"processing"                                        "readlink -f `which processing` | awk -F/ '{print \$3}' | awk -F'-' '{print \$2}'"
 	"openFrameworks    "	""	"$GNOME_SUPPORT"    24	"/opt/of_libs_openFrameworks"                       "echo $OFVER"
-	"SQLite            "	""	""			            25	"sqlite3"                                           "sqlite3 --version|awk -F' ' '{print \$1}'"
+	"SQLite            "	""	""                  25	"sqlite3"                                           "sqlite3 --version|awk -F' ' '{print \$1}'"
 	"[SciPy] numpy     "	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/numpy"            "dpkg -l|grep python-numpy|awk -F' ' '{print \$3}'"
 	"[SciPy] scipy     "	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/scipy"            "dpkg -l|grep python-scipy|awk -F' ' '{print \$3}'|awk -F'+' '{print \$1}'"
 	"[SciPy] matplotlib"	""	"$PYTHON_SUPPORT"   26	"/usr/lib/python2.7/dist-packages/matplotlib"       "dpkg -l |grep python-matplotlib| grep i386 | awk -F' ' '{print \$3}'"
