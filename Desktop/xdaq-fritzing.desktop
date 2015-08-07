@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Fritzing 0.9
+GenericName=XDAQ - Fritzing
+Exec=fritzing
+Icon=/usr/share/icons/gnome/256x256/xdaq-fritzing-logo.png
+StartupNotify=true
+Terminal=false
+Categories=Development
+Comment=Release suitable for any Arduino boards

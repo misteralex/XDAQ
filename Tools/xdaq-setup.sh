@@ -65,68 +65,68 @@ function InitPackagesStatus()
 
 	# Global variable to manage the Menu
 	XDAQ_MENU=(
-	   "[  0] Exit   [ -1] Reboot"		""
-	   ""					""
-	   ""					""
-	   ""					""
-	   ""					""
-	   ""					""
-	   ""					""
-	   ""					""
-	   ""		 			""
-	   ""		 			""
-	   "[10] OS Update           " 		""
-	   "[11] GNOME Desktop       " 		""
-	   "[12] Integrations        "		""
-	   "[13] GitHub              "		""
-	   "[14] Arduino IDE         "		""
-	   "[15] Eclipse IDE         "		""
-	   ""					""
-	   ""					""
-	   ""					""
-	   ""					""
-	   "[20] Doxygen             "		""
-	   "[21] Texmaker            "		""
-	   "[22] Fritzing            "		""
-	   "[23] Processing          "		""
-	   "[24] openFrameworks      "		""
-	   "[25] SQLite              "		""
-	   "[26] SciPy Stack         "		""
-	   "[27] GNU Octave          "		""
-	   "[28] Gnuplot             "		""
-	   "[29] GSL                 "		""
-	   "[30] Scilab              "		""
-	   "[31] Qt                  " 		"" 
-	   "" "" "" "" "" "" ""	"" "" 		"" "" "" "" "" "" "" "" "" 
-	   "" "" "" "" "" "" "" "" "" 		"" "" "" "" "" "" "" "" ""
-	   "[50] ArduinoUnit         "		""
-	   "[51] XTable              "		""
-	   "[52] pyFirmata           "		""
-	   "[53] Plotly              "		""
-	   "" "" "" "" "" "" "" 		"" "" "" "" "" "" ""
-	   "" "" "" "" "" "" "" "" ""	   	"" "" "" "" "" "" "" "" ""
-	   "[70] Vim                 "		""
-	   "[71] Xfig                "		""
-	   "[72] GNU Units           "		""
-	   "[73] PuTTY               "		""
-	   "[74] EAGLE PCB Design    "		""
+	   "[  0] Exit   [ -1] Reboot"          ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   "[10] OS Update           "          ""
+	   "[11] GNOME Desktop       "          ""
+	   "[12] Integrations        "          ""
+	   "[13] GitHub              "          ""
+	   "[14] Arduino IDE         "          ""
+	   "[15] Eclipse IDE         "          ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   ""                                   ""
+	   "[20] Doxygen             "          ""
+	   "[21] Texmaker            "          ""
+	   "[22] Fritzing            "          ""
+	   "[23] Processing          "          ""
+	   "[24] openFrameworks      "          ""
+	   "[25] SQLite              "          ""
+	   "[26] SciPy Stack         "          ""
+	   "[27] GNU Octave          "          ""
+	   "[28] Gnuplot             "          ""
+	   "[29] GSL                 "          ""
+	   "[30] Scilab              "          ""
+	   "[31] Qt                  "          "" 
+	   "" "" "" "" "" "" ""	"" ""           "" "" "" "" "" "" "" "" "" 
+	   "" "" "" "" "" "" "" "" ""           "" "" "" "" "" "" "" "" ""
+	   "[50] ArduinoUnit         "          ""
+	   "[51] XTable              "          ""
+	   "[52] pyFirmata           "          ""
+	   "[53] Plotly              "          ""
+	   "" "" "" "" "" "" ""                 "" "" "" "" "" "" ""
+	   "" "" "" "" "" "" "" "" ""           "" "" "" "" "" "" "" "" ""
+	   "[70] Vim                 "          ""
+	   "[71] Xfig                "          ""
+	   "[72] GNU Units           "          ""
+	   "[73] PuTTY               "          ""
+	   "[74] EAGLE PCB Design    "          ""
 	   "" "" "" "" "" "" "" "" "" "" "" ""  "" "" "" "" "" "" "" "" "" "" "" ""
 	   "" "" "" "" "" "" "" "" "" "" "" ""  "" "" "" "" "" "" "" "" "" "" "" ""
-	   ""			 		""
-	   "[100] XDAQ Demo          "		""
-	   "" "" "" "" "" "" "" "" ""		"" "" "" "" "" "" "" "" ""
-     "[110] Install XDAQ       "		""
-	   "[111] Install Debianinux "		""
-	   "[112] Install Libraries  "		""
-	   "[113] Install Optional   "		""
-	   "[114] Install VMwareTools"		""
-	   "" "" "" "" ""			"" "" "" "" ""
-	   "[120] Show Config        "		""
-	   "[121] Refresh Config     "		""
-     "[122] Serial Port        "		""
-	   "[123] Time Zone          "		""
-	   "[124] Keyboard           "		""
-	   "[125] XDAQ Panel         "		""
+	   ""                                   ""
+	   "[100] XDAQ Demo          "          ""
+	   "" "" "" "" "" "" "" "" ""           "" "" "" "" "" "" "" "" ""
+     "[110] Install XDAQ       "          ""
+	   "[111] Install Debianinux "          ""
+	   "[112] Install Libraries  "          ""
+	   "[113] Install Optional   "          ""
+	   "[114] Install VMwareTools"          ""
+	   "" "" "" "" ""                       "" "" "" "" ""
+	   "[120] Show Config        "          ""
+	   "[121] Refresh Config     "          ""
+     "[122] Serial Port        "          ""
+	   "[123] Time Zone          "          ""
+	   "[124] Keyboard           "          ""
+	   "[125] XDAQ Panel         "          ""
 	)
 
 	# Global variable to manage packages version
@@ -180,6 +180,7 @@ function InitPackagesStatus()
 	"Libel. Waspmote   "	""	"$GNOME_SUPPORT"    100	"waspmote"                                         "echo $LIB_WASPMOTEVER"
 	"Libel. Plug&Sense!"	""	"$GNOME_SUPPORT"    100	"waspmote"                                         "echo $LIB_PLUGSENSEVER"
 	"Sunbe. SODAQ Mbili"	""	"$ARDUINO_SUPPORT"  100	"$HOMEDEV/Arduino/libraries/Sodaq"                 "echo $SUNBED_SODAQVER"
+	"LT Linduino"	        ""	"$ARDUINO_SUPPORT"  100	"$HOMEDEV/Arduino/LTSketchbook"                    "echo $LT_LINDUINOVER"
 	)
 }
 
@@ -192,7 +193,7 @@ function CheckXDAQDesktop()
 	cp $GNOME_SHARE_APPS/xdaq*.desktop $HOMEDEV/XDAQ/Desktop
 
 	# Validate all current applications
-	chmod +x *
+	chmod +x $HOMEDEV/XDAQ/Desktop/*
 	chown -R $USERDEV:$USERDEV $HOMEDEV/XDAQ
 
 	sudo -u $USERDEV gsettings set org.gnome.desktop.background show-desktop-icons true
@@ -774,6 +775,11 @@ then
   	Setup_Java
 
   	echo -e "\nInstall Arduino IDE (Package: $ARDUINOPACKAGE}"
+    rm -rf $HOMEDEV/Arduino_BACK
+    mv $HOMEDEV/Arduino $HOMEDEV/Arduino_BACK
+    echo "Previous Arduino user context (i.e. ~/Arduino) is preserved for XDAQ user purposes (i.e. ~/Arduino_BACK)."
+    echo
+
   	package_root=`echo $ARDUINOPACKAGE|awk -F'-' '{print $1"-"$2}'`
   	cd /tmp
   	rm -rf $ARDUINOPACKAGE $package_root
@@ -798,6 +804,7 @@ then
     			mkdir $HOMEDEV/Arduino
   	  		mkdir $HOMEDEV/Arduino/libraries
   		  	mkdir $HOMEDEV/Arduino/hardware
+          chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino
   		fi
   	else
   		echo "*** Installation Error. Try again Arduino IDE setup process."
@@ -876,7 +883,7 @@ then
 	rm -rf master*
 	wget https://github.com/mmurdoch/arduinounit/archive/master.zip
 	unzip master -d $HOMEDEV/Arduino/libraries
-	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/libraries/ArduinoUnit
+	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/libraries/arduinounit-master
 else
 	echo "[ArduinoUnit] already installed."
 fi
@@ -1454,8 +1461,16 @@ function ShowPanel()
 # Demo Products
 function Setup_Demo()
 {
- 	echo "Y"|Setup_LibeliumWaspmote $1
+  echo
+  echo "XDAQ Setup will install following XDAQ Demo products:"
+  echo "1) Libelium > Waspmote"
+  echo "2) Sunbedded > SODAQ"
+  echo "3) Linear Technology > Linduino"
+  echo
+
+	echo "Y"|Setup_LibeliumWaspmote $1
 	echo "Y"|Setup_SunbeddedSodaq $1
+	echo "Y"|Setup_LTLinduino $1
 }
 
 
@@ -1465,16 +1480,17 @@ function Setup_LibeliumWaspmote()
 if [ "$1" != "1" ];
 then
 
+  echo
 	echo "This option will install a Libelium product."
 	echo "The Waspmote Pro IDE v$LIB_WASPMOTEVER (Wireless sensor networks open source platform)"
 	echo "WARNING: Hardware is from manufacturer (only open source code)"
 	echo
 
-	cd /tmp
 	package_name=waspmote-pro-ide-v$LIB_WASPMOTEVER-linux32
+	cd /tmp
+	rm -rf $package_name*
 	wget http://downloads.libelium.com/$package_name.zip -O $package_name.zip
-	rm -rf $package_name
-       	unzip $package_name.zip
+  unzip $package_name.zip
 	rm -rf /opt/waspmote*
 	mv $package_name /opt
 	ln -sf /opt/$package_name/waspmote /usr/local/bin/waspmote
@@ -1501,16 +1517,16 @@ then
 		return
 	fi
 
+  echo
 	echo "This option will install a Sunbedded product."
 	echo "SODAQ - SODAQ Mbili (Arduino 1284P) v$SUNBED_SODAQVER (Board ideal for low (solar) power applications)"
 	echo "WARNING: Hardware is from manufacturer (only open source code)"
 	echo
 
-	cd /tmp
-
 	package_name=Sodaq_bundle
+	cd /tmp
+	rm -rf $package_name*
 	wget http://mbili.sodaq.net/wp-content/uploads/2015/04/$package_name.zip -O $package_name.zip
-	rm -rf $package_name
   unzip -d $package_name $package_name.zip
 		
 	# Clean Arduino environment from older SODAQ libraries
@@ -1521,8 +1537,8 @@ then
 	rm -rf $HOMEDEV/Arduino/hardware/sodaq-HardwareMoja
 
 	# Install SODAQ Board reference and libraries
-	cp -R hardware/* $HOMEDEV/Arduino/hardware
-	cp -R libraries/* $HOMEDEV/Arduino/libraries
+	cp -R $package_name/hardware/* $HOMEDEV/Arduino/hardware
+	cp -R $package_name/libraries/* $HOMEDEV/Arduino/libraries
 
 	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/libraries
 	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/hardware
@@ -1531,6 +1547,46 @@ then
 	cp -f $HOMEDEV/XDAQ/Admin/xdaq-sunbedded-logo.png $GNOME_SHARE_ICONS
 else
 	echo "[Sunbeded - SODAQ] already installed."
+fi
+}
+
+
+# Linear Technology - Linduino
+function Setup_LTLinduino()
+{
+if [ "$1" != "1" ];
+then
+  echo
+	echo "This option will install Linduino."
+	echo "The highly portable C library Arduino compatible for LT devices $LT_LINDUINOVER"
+	echo "WARNING: Hardware is from manufacturer"
+	echo
+
+  package_name=LTSketchbook
+	cd /tmp
+	rm -rf $package_name*
+	wget http://www.linear.com/docs/43958 -O $package_name.zip
+  unzip $package_name.zip
+
+  # Remove current LT Linduino library
+  if [ -d $HOMEDEV/Arduino/$package_name ];
+  then
+      cd $HOMEDEV/Arduino/libraries
+      ls $HOMEDEV/Arduino/LTSketchbook/libraries | xargs rm -rf
+	    rm -rf $HOMEDEV/Arduino/$package_name*
+      cd /tmp
+  fi
+
+	mv $package_name $HOMEDEV/Arduino
+  mv $HOMEDEV/Arduino/$package_name/Example\ Designs $HOMEDEV/Arduino/$package_name/Example_Designs
+  cp -R $HOMEDEV/Arduino/$package_name/libraries/* $HOMEDEV/Arduino/libraries/
+
+	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-lineartechnology-linduino.desktop $GNOME_SHARE_APPS
+	cp -f $HOMEDEV/XDAQ/Admin/xdaq-lineartechnology-logo.png $GNOME_SHARE_ICONS
+
+else
+	echo "[Linear Technlogy Linduino Product] already installed."
 fi
 }
 
@@ -1598,6 +1654,7 @@ SCILABVER=5.5.2
 LIB_WASPMOTEVER=04
 LIB_PLUGSENSEVER=02
 SUNBED_SODAQVER=Rev.4
+LT_LINDUINOVER=Rev.3659
 PLOTLYVER=1.0
 NODEJSVER=0.12.2
 EAGLEPCBVER=7.3.0

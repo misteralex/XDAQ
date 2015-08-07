@@ -23,7 +23,7 @@
  *  @file    BlinkingLEDs.cpp (or BlinkingLEDs.ino)
  *  @author  AF
  *  @date    25/1/2015
- *  @version 1.0
+ *  @version 2.0
  *
  *	@brief Application for XTable CRUD table embedded class
  *
@@ -45,8 +45,7 @@
 #include <Firmata.h>
 #include "XTable.h"
 
-#define PRINT(m) Serial.print(m);
-#define DEBUG(value) Serial.print(#value); Serial.print("="); Serial.println(value)
+#define DEBUG(value) Serial.print("\n"); Serial.print(__LINE__); Serial.print(":"); Serial.print(#value); Serial.print("="); Serial.println(value);
 
 byte previousPORT[TOTAL_PORTS];
 
@@ -116,8 +115,6 @@ bool CheckArduinoUnoPinId(int pin)
 
 bool CreateDefaultConf()
 {
-	unsigned int id;
-
 	blinking_LEDs.Clean();
 
 	for(id=2; id<5+2; id++)
@@ -169,11 +166,11 @@ void SetOutputConf()
 			pinMode(blinking_LEDs.Select()->pin, OUTPUT);
 	} while (blinking_LEDs.Next());
 
-    	/// Local button to switch between configurations
+    /// Local button to switch between configurations
 	pinMode(7, INPUT);
 
-    	/// Remote control equivalent to push local button
-    	pinMode(8, OUTPUT);
+    /// Remote control equivalent to push local button
+    pinMode(8, OUTPUT);
 }
 
 bool GetConfiguration()
@@ -181,16 +178,16 @@ bool GetConfiguration()
 	if (blinking_LEDs.InitStorage(start_address, size_buffer))
 	{
 
-		if (!firmata_mode) PRINT("Configuration loaded successfully\r\n\n");
+		if (!firmata_mode) Serial.print("Configuration loaded successfully\r\n\n");
 
 		if (blinking_LEDs.LoadStorage())
 		{
 			if (!blinking_LEDs.Counter())
 			{
-				if (!firmata_mode) PRINT("Initialize default configuration\r\n");
+				if (!firmata_mode) Serial.print("Initialize default configuration\r\n");
 				if (!CreateDefaultConf())
 				{
-					PRINT("General SRAM memory error\r\n");
+					Serial.print("General SRAM memory error\r\n");
 					delay(100);
 					return false;
 				}
@@ -200,34 +197,32 @@ bool GetConfiguration()
 		}
 	}
 
-	PRINT("General EEPROM error !!!\r\n");
+	Serial.print("General EEPROM error !!!\r\n");
 	delay(100);
 	return false;
 }
 
 void ShowConfiguration()
 {
-	unsigned int id;
-
-	PRINT("\r\nConfiguation format: LED(pin, blinking status, delay msec)\r\n");
-	PRINT("(Here <Pin 14> is virtual for delay scope)\r\n");
-	PRINT("\r\nCurrent configuration: <");
-	if (start_address == start_address_a) PRINT("a>\r\n")
-    	else PRINT("b>\r\n");
+	Serial.print("\r\nConfiguation format: LED(pin, blinking status, delay msec)\r\n");
+	Serial.print("(Here <Pin 14> is virtual for delay scope)\r\n");
+	Serial.print("\r\nCurrent configuration: <");
+	if (start_address == start_address_a) Serial.print("a>\r\n");
+    	else Serial.print("b>\r\n");
 
 	blinking_LEDs.Top();
+	id=0;
 	do
 	{
-		id = blinking_LEDs.GetId();
 		LED = *blinking_LEDs.Select();
-		PRINT("("); PRINT(id);
-		PRINT(") - Update LED (");
-		PRINT(LED.pin); PRINT(", ");
-		PRINT(LED.blinking ? "true" : "false"); PRINT(", ");
-		PRINT(LED.delay_ms); PRINT(")\r\n");
+		Serial.print("("); Serial.print(id++);
+		Serial.print(") - Update LED (");
+		Serial.print(LED.pin); Serial.print(", ");
+		Serial.print(LED.blinking ? "true" : "false"); Serial.print(", ");
+		Serial.print(LED.delay_ms); Serial.print(")\r\n");
 	} while (blinking_LEDs.Next());
 
-    	PRINT("\r\n");
+    Serial.print("\r\n");
 }
 
 
@@ -237,11 +232,11 @@ void setup()
 	Serial.begin(115200);
 	delay(100);
 
-	PRINT("\r\n\n\n*** Start BlinkingLEDs sketch ***\r\nFirmata protocol will starts within 5 sec.\r\n\n");
+	Serial.print("\r\n\n\n*** Start BlinkingLEDs sketch ***\r\nFirmata protocol will starts within 5 sec.\r\n\n");
 
 	if (!blinking_LEDs.InitBuffer(30))
 	{
-		PRINT("Error: cannot allocate required memory\r\n");
+		Serial.print("Error: cannot allocate required memory\r\n");
 		delay(100);
 		exit(0);
 	}
@@ -264,7 +259,7 @@ void setup()
 
 	if (!GetConfiguration())
 	{
-		PRINT("Error: cannot get required memory\r\n");
+		Serial.print("Error: cannot get required memory\r\n");
 		delay(100);
 		exit(0);
 	}
@@ -282,7 +277,6 @@ void setup()
 	nChoice	= 101;				/// Stand for 'e' Exit from Console Mode
 
 	/// Firmata initialization and global parameters
-
 	Firmata.setFirmwareVersion(2,3);
 	Firmata.attach(STRING_DATA, stringCallback);
 	Firmata.attach(DIGITAL_MESSAGE, digitalWriteCallback);
@@ -290,7 +284,7 @@ void setup()
 	cmd_time = 5000;
 	current_time = millis();
 
-	PRINT("Press <m> to show all available options\r\n\n");
+	Serial.print("Press <m> to show all available options\r\n\n");
 }
 
 void loop()
@@ -302,35 +296,35 @@ void loop()
 
 		if (millis()-current_time<cmd_time)
 		{
-			if (nChoice==101) PRINT("*** Start Console Mode ***\r\n\n");
+			if (nChoice==101) Serial.print("*** Start Console Mode ***\r\n\n");
 			nChoice = Serial.read();
-			PRINT(">");
-			PRINT((char)nChoice);
-			PRINT("\r\n");
+			Serial.print(">");
+			Serial.print((char)nChoice);
+			Serial.print("\r\n");
 			Serial.flush();
 		}
 
-        	/// "m" Menu
+        /// "m" Menu
 		if (nChoice==109)
 		{
-			PRINT("\r\nMain Menu\r\n");
-            		PRINT("(m) - Show this menu\r\n");
-			PRINT("(d) - Set default configuration\r\n");
-			PRINT("(s) - Save current configuration\r\n");
-			PRINT("(a) - Load configuration <a>\r\n");
-			PRINT("(b) - Load configuration <b>\r\n");
-			PRINT("(c) - Change current configuration\r\n");
-			PRINT("(w) - Show current configuration\r\n");
-			PRINT("(r) - Run current configuration\r\n");
-            		PRINT("(e) - Exit\r\n\n");
-			PRINT("*** Which option?\r\n");
+			Serial.print("\r\nMain Menu\r\n");
+            Serial.print("(m) - Show this menu\r\n");
+			Serial.print("(d) - Set default configuration\r\n");
+			Serial.print("(s) - Save current configuration\r\n");
+			Serial.print("(a) - Load configuration <a>\r\n");
+			Serial.print("(b) - Load configuration <b>\r\n");
+			Serial.print("(c) - Change current configuration\r\n");
+			Serial.print("(w) - Show current configuration\r\n");
+			Serial.print("(r) - Run current configuration\r\n");
+            Serial.print("(e) - Exit\r\n\n");
+			Serial.print("*** Which option?\r\n");
 			nChoice = -1;
 		}
 
-        	/// "d" Default configuration
+        /// "d" Default configuration
 		if (nChoice==100)
 		{
-			PRINT("Set default configuration\r\n");
+			Serial.print("Set default configuration\r\n");
 			CreateDefaultConf();
 			nChoice = -1;
 		}
@@ -338,7 +332,7 @@ void loop()
 		/// "r" Run configuration
 		if (nChoice==114)
 		{
-			PRINT("Run current configuration\r\n");
+			Serial.print("Run current configuration\r\n");
 			refreshLEDs = true;
 			nChoice = -1;
 		}
@@ -347,7 +341,7 @@ void loop()
 		if (nChoice==115)
 		{
 			blinking_LEDs.SaveStorage();
-			PRINT("Configuration saved successfully.\r\n\n");
+			Serial.print("Configuration saved successfully.\r\n\n");
 			nChoice = -1;
 		}
 
@@ -355,47 +349,47 @@ void loop()
 		if (nChoice==99)
 		{
 			ShowConfiguration();
-			PRINT("\r\nWhich configuration to change? ");
+			Serial.print("\r\nWhich configuration to change? ");
 			nChoice=-1; while (nChoice == -1)
 			if (Serial.available() > 0) nChoice = Serial.parseInt();
 
 			/// Check request within existing configurations
 			blinking_LEDs.Top();
+			id=0;
 			do
 			{
-				if (blinking_LEDs.GetId()==nChoice) { nMenu = 1; break; }
+				if ((id++)==nChoice) { nMenu = 1; break; }
 			} while (blinking_LEDs.Next());
 
 			if (nMenu==1)
 			{
-				id = blinking_LEDs.GetId();
 				LED = *blinking_LEDs.Select();
-				PRINT("Update LED (");
-				PRINT(blinking_LEDs.Select()->pin); PRINT(", ");
-				PRINT(blinking_LEDs.Select()->blinking ? "true" : "false"); PRINT(", ");
-				PRINT(blinking_LEDs.Select()->delay_ms); PRINT(")\r\n");
+				Serial.print("Update LED (");
+				Serial.print(blinking_LEDs.Select()->pin); Serial.print(", ");
+				Serial.print(blinking_LEDs.Select()->blinking ? "true" : "false"); Serial.print(", ");
+				Serial.print(blinking_LEDs.Select()->delay_ms); Serial.print(")\r\n");
 
-				PRINT("Pin (2-13, 14 for virtual LED)? ");
+				Serial.print("Pin (2-13, 14 for virtual LED)? ");
 				nChoice=-1; while (nChoice == -1)
 				if (Serial.available() > 0) nChoice = Serial.parseInt();
 				if ((nChoice>1) && (nChoice<15)) LED.pin = nChoice;
-				else PRINT("(Invalid Pin) ");
-				PRINT(LED.pin);
+				else Serial.print("(Invalid Pin) ");
+				Serial.print(LED.pin);
 
-				PRINT("\r\nBlinking (0/1)? ");
+				Serial.print("\r\nBlinking (0/1)? ");
 				nChoice=-1; while (nChoice == -1)
 				if (Serial.available() > 0) nChoice = Serial.parseInt();
 				LED.blinking = (nChoice > 0 ? 1 : 0);
-				PRINT(LED.blinking);
+				Serial.print(LED.blinking);
 
-				PRINT("\r\nWhich delay (sec)? ");
+				Serial.print("\r\nWhich delay (sec)? ");
 				nChoice=-1; while (nChoice == -1)
 				if (Serial.available() > 0) nChoice = Serial.parseInt();
 				LED.delay_ms = nChoice;
-				PRINT(LED.delay_ms)
+				Serial.print(LED.delay_ms);
 
 				blinking_LEDs.Update(LED);
-				PRINT("\r\nConfiguration updated successfully.\r\n\n");
+				Serial.print("\r\nConfiguration updated successfully.\r\n\n");
 				nMenu = 0;
 			}
 
@@ -412,7 +406,7 @@ void loop()
 		/// "e" Exit from console mode
 		if (nChoice==101)
 		{
-		  PRINT("*** Leave Console Mode. Start Firmata Mode. ***\r\n\n\n");
+		  Serial.print("*** Leave Console Mode. Start Firmata Mode. ***\r\n\n\n");
 		  Serial.end();
 		  Firmata.begin(115200);
 		  firmata_mode = true;
@@ -443,18 +437,18 @@ void loop()
         	switch_button = LOW;
         	switch_event = false;
 
-        	if (!firmata_mode) PRINT("Load configuration ");
+        	if (!firmata_mode) Serial.print("Load configuration ");
 
         	if (nChoice==97)
         	{
-        		if (!firmata_mode) PRINT("<a>\r\n");
+        		if (!firmata_mode) Serial.print("<a>\r\n");
 				start_address = start_address_a;
 				blinking_LEDs.eeprom.write(0,0);
 				blinking_LEDs.eeprom.write(1,start_address_a);
         	}
         	else
         	{
-        		if (!firmata_mode) PRINT("<b>\r\n");
+        		if (!firmata_mode) Serial.print("<b>\r\n");
         		start_address = blinking_LEDs.NextFreeAddressStorage();
 				blinking_LEDs.eeprom.write(1, start_address >> 8);
 				blinking_LEDs.eeprom.write(2, start_address & 0x00FF);

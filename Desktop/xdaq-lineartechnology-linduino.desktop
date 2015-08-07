@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Linear Technology - Linduino
+GenericName=XDAQ - Linear Technology - Linduino
+Exec=xterm -fa 'Monospace:size=12:antialias=true:hinting=true' -fg blue -bg white -geometry 80x48 -e "arduino ~/Arduino/LTSketchbook/Example\ Designs/LTC2449_Datalogger/LTC2449_Datalogger.ino"
+Icon=/usr/share/icons/gnome/256x256/xdaq-lineartechnology-logo.png
+StartupNotify=true
+Terminal=false
+Categories=Development
+Comment=Release suitable for Arduino boards

@@ -344,9 +344,11 @@ function XDAQExample_Libelium_Waspmote()
 		echo "available at www.embeddedrevolution.info"
 		echo "and Libelium web site at www.libelium.com"
 		echo 
+    echo "Please wait while opening the applications..."
 	else
-		echo "Please install Marketplace products."
+		echo "Please install Demo products."
 	fi
+  echo
 }
 
 
@@ -360,11 +362,11 @@ function XDAQExample_Sunbedded_SODAQ_Mbili()
 	GetArduinoHome
 	if [ "$HOME_ARDUINO" != "" ];
 	then
-		if [ -d "$HOME_ARDUINO/libraries/Sodaq" ];
+		if [ -d "$HOME_ARDUINO_LIB/libraries/Sodaq" ];
 		then
 			# Open Arduino IDE with Sunbedded SODAQ Mbili (Arduino 1284P) Demo
 			iceweasel http://mbili.sodaq.net &>/dev/null &
-			OpenArduinoExample $HOME_ARDUINO/libraries/Sodaq/tph_demo/tph_demo.ino
+			OpenArduinoExample $HOME_ARDUINO_LIB/libraries/Sodaq/tph_demo/tph_demo.ino
 
 			echo "Now you can browse Sunbedded SODAQ Mbili (Arduino 1284P) Demo code"
 			echo "Please check current board from Tools > Board"
@@ -374,15 +376,16 @@ function XDAQExample_Sunbedded_SODAQ_Mbili()
 			echo "available at www.embeddedrevolution.info"
 			echo "and Sunbedded at www.sunbedded.nl"
 			echo 
+      echo "Please wait while opening the applications..."
 		else
-			echo "Please install Marketplace products."
+			echo "Please install Demo products."
 		fi
+    echo
 	fi
 }
 
 
-
-# Sunbedded > SODAQ > Mbili 
+# Plotly > Streaming demo 
 function XDAQExample_Plotly()
 {
 	echo "[***] Plotly > plotly_streaming_serial"
@@ -418,11 +421,43 @@ function XDAQExample_Plotly()
 			echo "available at www.embeddedrevolution.info"
 			echo "and Plotly at https://plot.ly"
 			echo 
+      echo "Please wait while opening the applications..."
 			
 			node simple.js 2>&1
 		else
 			echo "Please install [Plotly] package."
 		fi
+    echo
+	fi
+}
+
+
+# Linear technology > Linduino
+function XDAQExample_LT_Linduino()
+{
+	echo "[***] Linear Technology > Linduino"
+	echo "This is a Linduino Demo."
+	echo
+	
+	GetArduinoHome
+	if [ "$HOME_ARDUINO" != "" ];
+	then
+		if [ -d "$HOME_ARDUINO_LIB/LTSketchbook" ];
+		then
+			# Open Arduino IDE with Linduino example (i.e. LTC2449_Datalogger.ino)
+			OpenArduinoExample $HOME_ARDUINO_LIB/LTSketchbook/Example_Designs/LTC2449_Datalogger/LTC2449_Datalogger.ino
+
+			echo "Now you can browse Linduino LTCD2449_Datalogger Demo code"
+			echo "Please also browse: Arduino > File > Sketchbook > LTSketchbook"
+			echo
+			echo "Find more about it in the XDAQ Guide"
+			echo "available at www.embeddedrevolution.info"
+			echo 
+      echo "Please wait while opening the applications..."
+		else
+			echo "Please install Demo products."
+		fi
+    echo
 	fi
 }
 
@@ -447,6 +482,7 @@ do
          " [ 5] Plotly   > Streaming demo      (Plotly)         "
          " [ 6] Waspmote > Waspmote Pro Demo   (Libelium)       "
          " [ 7] SODAQ    > Mbili Demo          (Sunbedded)      "
+         " [ 8] Linduino > LTC2449_Datalogger  (LT)             "
          ""
          " [ 0] Exit                                            "
   )
@@ -462,12 +498,9 @@ do
 		5) 	XDAQExample_Plotly ;;
 		6) 	XDAQExample_Libelium_Waspmote ;;
 		7) 	XDAQExample_Sunbedded_SODAQ_Mbili ;;
+		8) 	XDAQExample_LT_Linduino ;;
 		*)	echo "Error: Invalid option..."	;;
 	esac
-
-	echo "Please wait while opening required XDAQ example (Option [$nChoice])"
-	echo "Press [Enter] to continue..."
-	read
 
 done
 }
@@ -507,6 +540,7 @@ XDAQVER=`cat $HOMEDEV/XDAQ/revisions.txt |head -1|awk -F' ' '{print $2}'`
 HOME_TOOLS=$HOMEDEV/XDAQ/Tools
 HOME_EXAMPLES=$HOMEDEV/XDAQ/Examples
 HOME_ARDUINO=""
+HOME_ARDUINO_LIB=$HOMEDEV/Arduino
 COM=""
 
 echo -e "\n[ XDAQ Starter ]\n"
