@@ -823,22 +823,26 @@ if [ "$1" != "1" ];
 then
 	  Setup_Java
 
+    package_name=eclipse-cpp-mars-M4-linux-gtk.tar.gz
   	cd /tmp
-  	wget http://ftp.heanet.ie/pub/eclipse/technology/epp/downloads/release/luna/SR2/eclipse-cpp-luna-SR2-linux-gtk.tar.gz -O eclipse-cpp-luna-SR2-linux-gtk.tar.gz
-  	tar xvzf eclipse-cpp-luna-SR2-linux-gtk.tar.gz -C /opt/
+    rm -rf $package_name
+    rm -rf /opt/eclipse
+  	#wget http://ftp.heanet.ie/pub/eclipse/technology/epp/downloads/release/luna/SR2/eclipse-cpp-luna-SR2-linux-gtk.tar.gz -O eclipse-cpp-luna-SR2-linux-gtk.tar.gz
+  	wget http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/M4/$package_name -O $package_name
+  	tar xvzf $package_name -C /opt/
   	if [ -d /opt/eclipse ];
   	then
   		chown -R $USERDEV:$USERDEV /opt/eclipse
-  		rm -rf eclipse-cpp-luna-SR2-linux-gtk.tar.gz
-  		rm -rf /usr/local/bin/eclipse
+  		#rm -rf eclipse-cpp-luna-SR2-linux-gtk.tar.gz
+  		#rm -rf /usr/local/bin/eclipse
   		ln -s /opt/eclipse/eclipse /usr/local/bin/eclipse
   		cp -f $HOMEDEV/XDAQ/Admin/xdaq-eclipse.desktop $GNOME_SHARE_APPS
   		cp -f $HOMEDEV/XDAQ/Admin/xdaq-eclipse-icon.png $GNOME_SHARE_ICONS
 		
   		# Check external plugin
   		echo
-  		echo "Please read Debianinux Guide to setup Arduino Eclipse Plugin and"
-  		echo "XDAQ Guide to setup PyDev Eclipse Plugin from Eclipse Marketplace."
+  		echo "Please setup Arduino and PyDev Plugins from Eclipse Marketplace"
+  		echo "as described in the XDAQ User Guide."
   	else
   		echo "*** Installation Error. Try again setup process."
   	fi
