@@ -140,7 +140,7 @@ function ExecCuteCom()
 # XDAQ Setup
 function XDAQSetup()
 {
-	sudo /home/arduinodev/XDAQ/Tools/xdaq-setup.sh $OSVERSION $USER
+	sudo $HOMEDEV/XDAQ/Tools/xdaq-setup.sh $OSVERSION $USER
 }
 
 
