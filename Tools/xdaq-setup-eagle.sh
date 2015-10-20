@@ -33,9 +33,9 @@ EAGLEPCBVER=7.3.0
 # XDAQ package manager functions (Setup/Status)
 function Setup()
 {
-	rm -rf /usr/local/bin/eagle
+  rm -rf /usr/local/bin/eagle
   rm -rf /tmp/eagle*
-	cd /tmp
+  cd /tmp
 	wget http://web.cadsoft.de/ftp/eagle/program/7.3/eagle-lin32-$EAGLEPCBVER.run
 	chmod +x eagle-lin32-$EAGLEPCBVER.run
 	ln -sf /opt/eagle-$EAGLEPCBVER/bin/eagle /usr/local/bin/eagle

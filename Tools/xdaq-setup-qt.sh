@@ -31,12 +31,12 @@ XDAQ_SUPPORT=DESKTOP
 # XDAQ package manager functions (Setup/Status)
 function Setup()
 {
-	apt-get --yes --force-yes -f install
-	apt-get --yes --force-yes --reinstall install qt4-dev-tools
+  apt-get --yes --force-yes -f install
+  apt-get --yes --force-yes --reinstall install qt4-dev-tools
   apt-get --yes --force-yes --reinstall install qtcreator
-	ConfigGnomeMenu qtcreator
-	ConfigGnomeMenu assistant-qt4
-	ConfigGnomeMenu linguist-qt4
+  ConfigGnomeMenu qtcreator
+  ConfigGnomeMenu assistant-qt4
+  ConfigGnomeMenu linguist-qt4
 }
 
 function Status()

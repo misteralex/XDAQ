@@ -2,9 +2,9 @@
 
 ##############################################################################
 # xdaq-eclipse-import.py - Script to import older version of Arduino C++     #
-# project Eclipse based.						                                         #
-# 									                                                         #
-# This component is part of XDAQ v1.0 Virtual Appliance 		                 # 
+# project Eclipse based.                                                     #
+#                                                                            #
+# This component is part of XDAQ v1.0 Virtual Appliance                      # 
 # Copyright (C) 2015 by AF                                                   #
 #                                                                            #
 # xdaq-eclipse-import.py is free software: you can redistribute it and/or    #
@@ -19,7 +19,7 @@
 #                                                                            #
 # You should have received a copy of the GNU General Public                  #
 # License along with xdaq-eclipse-import.py                                  #
-# If not, see <http://www.gnu.org/licenses/> 				                         #
+# If not, see <http://www.gnu.org/licenses/>                                 #
 ##############################################################################
 
 import sys

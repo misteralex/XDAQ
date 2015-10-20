@@ -31,28 +31,28 @@ function InitPackagesStatus()
 
 	# Global variable to manage the Menu
 	XDAQ_MENU=(
-	   "[  0] Exit   [ -1] Reboot"
-	   ""
-	   ""
-	   ""
-	   "[  1] Core               "
-	   "[  2] Libraries          "
-	   "[  3] Optional           "
-	   ""
-	   ""
-	   ""
+     "[  0] Exit   [ -1] Reboot"
+     ""
+     ""
+     ""
+     "[  1] Core               "
+     "[  2] Libraries          "
+     "[  3] Optional           "
+     ""
+     ""
+     ""
      "[110] Install XDAQ       "
-	   "[111] Install Debianinux "
-	   "[112] Install Libraries  "
-	   "[113] Install Optional   "
-	   "[114] Install VMwareTools"
-	   "" "" "" "" ""
-	   "[120] Show Config        "
-	   "[121] Refresh Config     "
+     "[111] Install Debianinux "
+     "[112] Install Libraries  "
+     "[113] Install Optional   "
+     "[114] Install VMwareTools"
+     "" "" "" "" ""
+     "[120] Show Config        "
+     "[121] Refresh Config     "
      "[122] Serial Port        "
-	   "[123] Time Zone          "
-	   "[124] Keyboard           "
-	   "[125] XDAQ Panel         "
+     "[123] Time Zone          "
+     "[124] Keyboard           "
+     "[125] XDAQ Panel         "
 	)
 }
 
@@ -99,16 +99,16 @@ function CheckCategory()
   PCK_LIST=$(find xdaq-setup-* -type f -print | xargs grep XDAQ_CATEGORY=$CATEGORY|awk -F':' '{print $1}')
   PCK_LIST=(${PCK_LIST})
  
-	pkg_counter=${#PCK_LIST[@]}
+  pkg_counter=${#PCK_LIST[@]}
   for (( i=0; i<$pkg_counter; i++ ));
   do
     package_script=${PCK_LIST[$i]}
     XDAQTools $package_script "--version" >> $XDAQ_REPORT_FILE
 
-		perc=$(($(($i*100))/$pkg_counter))
-		echo -ne "Checking current XDAQ $CATEGORY configuration: $perc%\r"
-	done
-	echo "[$CATEGORY] check completed.                                         "
+    perc=$(($(($i*100))/$pkg_counter))
+    echo -ne "Checking current XDAQ $CATEGORY configuration: $perc%\r"
+  done
+  echo "[$CATEGORY] check completed.                                         "
 
   cd $dir_org
 }
@@ -130,7 +130,7 @@ function ShowSetup()
   PCK_LIST=($(find xdaq-setup-* -type f -print | xargs grep XDAQ_CATEGORY|grep $CATEGORY|awk -F':' ' {print $1}'|xargs grep XDAQ_PACKAGE|awk -F'=' '{print $2}'))
   PCK_COMM=($(find xdaq-setup-* -type f -print | xargs grep XDAQ_CATEGORY|grep $CATEGORY|awk -F':' ' {print $1}'))
  
-	pkg_counter=${#PCK_LIST[@]}
+  pkg_counter=${#PCK_LIST[@]}
   for (( i=0; i<$pkg_counter; i++ ));
   do
     unset IFS
@@ -175,37 +175,37 @@ function ShowSetup()
 # Check current configuration
 function CheckConfig()
 {
-	# Initialize global variables
-	InitPackagesStatus
+  # Initialize global variables
+  InitPackagesStatus
 
-	# Update XDAQ/Desktop
-	CheckXDAQDesktop
+  # Update XDAQ/Desktop
+  CheckXDAQDesktop
 
-	# Store current XDAQ configuration
-	rm -rf $XDAQ_REPORT_FILE
+  # Store current XDAQ configuration
+  rm -rf $XDAQ_REPORT_FILE
   echo
-	LogConfig
+  LogConfig
 
-	CHECK_CONFIG=0
+  CHECK_CONFIG=0
 }
 
 
 # Log current configuration
 function LogConfig()
 {
-	echo -e "\n*** XDAQ Configuration ***\n"                                                                          >> $XDAQ_REPORT_FILE
-	echo "[ Global Setting ]"                                                                                         >> $XDAQ_REPORT_FILE
-	echo -e "XDAQ\t       v$XDAQVER"                                                                                  >> $XDAQ_REPORT_FILE 
-	echo -e "USER\t       $USERDEV"                                                                                   >> $XDAQ_REPORT_FILE
-	echo -e "HOME\t       $HOMEDEV"                                                                                   >> $XDAQ_REPORT_FILE
-	echo -e "COM\t       $COM"                                                                                        >> $XDAQ_REPORT_FILE
-	echo -e "ETH\t       $(sudo ifconfig|head -1|cut -c1-4)"                                                          >> $XDAQ_REPORT_FILE
-	echo -e "TZ\t       `cat /etc/timezone` (`date`)"                                                                 >> $XDAQ_REPORT_FILE
-	echo -e "KYBRD\t       `eval $CHECK_KEYBOARD_COMMAND`"                                                            >> $XDAQ_REPORT_FILE
+  echo -e "\n*** XDAQ Configuration ***\n"                                                                          >> $XDAQ_REPORT_FILE
+  echo "[ Global Setting ]"                                                                                         >> $XDAQ_REPORT_FILE
+  echo -e "XDAQ\t       v$XDAQVER"                                                                                  >> $XDAQ_REPORT_FILE 
+  echo -e "USER\t       $USERDEV"                                                                                   >> $XDAQ_REPORT_FILE
+  echo -e "HOME\t       $HOMEDEV"                                                                                   >> $XDAQ_REPORT_FILE
+  echo -e "COM\t       $COM"                                                                                        >> $XDAQ_REPORT_FILE
+  echo -e "ETH\t       $(sudo ifconfig|head -1|cut -c1-4)"                                                          >> $XDAQ_REPORT_FILE
+  echo -e "TZ\t       `cat /etc/timezone` (`date`)"                                                                 >> $XDAQ_REPORT_FILE
+  echo -e "KYBRD\t       `eval $CHECK_KEYBOARD_COMMAND`"                                                            >> $XDAQ_REPORT_FILE
 
   # Initialize global variables
   InitPackagesStatus
-
+  
   CheckCategory CORE
   CheckCategory LIBRARY
   CheckCategory OPTIONAL
@@ -220,7 +220,7 @@ function LogConfig()
 # Show current configuration
 function ShowConfig()
 {
-	more $XDAQ_REPORT_FILE
+  more $XDAQ_REPORT_FILE
 }
 
 
@@ -320,12 +320,11 @@ function Setup_XDAQ()
         "xdaq-setup-texmaker.sh"
       )
 
-	    pkg_counter=${#PCK_LIST[@]}
+      pkg_counter=${#PCK_LIST[@]}
       for (( i=0; i<$pkg_counter; i++ ));
       do
-    
-	      perc=$(($(((($i+1))*100))/$pkg_counter))
-	      echo -e "\n[XDAQ Installer] $perc% ( $(($i+1))/$pkg_counter ) Packages\n"
+        perc=$(($(((($i+1))*100))/$pkg_counter))
+        echo -e "\n[XDAQ Installer] $perc% ( $(($i+1))/$pkg_counter ) Packages\n"
    
         XDAQTools ${PCK_LIST[$i]} "-reinstall Y"
       done
@@ -348,11 +347,11 @@ function Setup_Libraries()
 {
   XDAQAutoInstaller LIBRARY
 
-	# Customize XDAQ Desktop (add desktop background)
-	cp -f $HOMEDEV/XDAQ/Admin/xdaq-background_1* /usr/share/images/desktop-base
-	cp -f $HOMEDEV/XDAQ/Admin/xdaq-desktop-background.xml /usr/share/images/desktop-base/desktop-background.xml
+  # Customize XDAQ Desktop (add desktop background)
+  cp -f $HOMEDEV/XDAQ/Admin/xdaq-background_1* /usr/share/images/desktop-base
+  cp -f $HOMEDEV/XDAQ/Admin/xdaq-desktop-background.xml /usr/share/images/desktop-base/desktop-background.xml
 
-	echo -e "\n*** XDAQ Libraries Installation Completed ***\n"
+  echo -e "\n*** XDAQ Libraries Installation Completed ***\n"
 }
 
 
@@ -361,7 +360,7 @@ function Setup_Optional()
 {
   
   XDAQAutoInstaller OPTIONAL
-	echo -e "\n*** XDAQ Optional Components installation completed ***\n"
+  echo -e "\n*** XDAQ Optional Components installation completed ***\n"
 }
 
 

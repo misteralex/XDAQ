@@ -68,7 +68,7 @@ fi
 # XDAQ package manager functions (Setup/Status/Support)
 function Setup()
 {
-	SelectRelease
+  SelectRelease
   if [[ $? != 0 ]];
   then
       Setup_Java

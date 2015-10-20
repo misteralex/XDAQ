@@ -112,17 +112,17 @@ function Setup_LTLinduino()
   then
       cd $HOMEDEV/Arduino/libraries
       ls $HOMEDEV/Arduino/LTSketchbook/libraries | xargs rm -rf
-	    rm -rf $HOMEDEV/Arduino/$package_name*
+      rm -rf $HOMEDEV/Arduino/$package_name*
       cd /tmp
   fi
 
-	mv $package_name $HOMEDEV/Arduino
+  mv $package_name $HOMEDEV/Arduino
   mv $HOMEDEV/Arduino/$package_name/Example\ Designs $HOMEDEV/Arduino/$package_name/Example_Designs
   cp -R $HOMEDEV/Arduino/$package_name/libraries/* $HOMEDEV/Arduino/libraries/
 
-	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino
-	cp -f $HOMEDEV/XDAQ/Admin/xdaq-lineartechnology-linduino.desktop $GNOME_SHARE_APPS
-	cp -f $HOMEDEV/XDAQ/Admin/xdaq-lineartechnology-logo.png $GNOME_SHARE_ICONS
+  chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino
+  cp -f $HOMEDEV/XDAQ/Admin/xdaq-lineartechnology-linduino.desktop $GNOME_SHARE_APPS
+  cp -f $HOMEDEV/XDAQ/Admin/xdaq-lineartechnology-logo.png $GNOME_SHARE_ICONS
 }
 
 
@@ -136,17 +136,17 @@ function Setup()
   echo "3) Linear Technology > Linduino"
   echo
 
-	Setup_LibeliumWaspmote
-	Setup_SunbeddedSodaq
-	Setup_LTLinduino
+  Setup_LibeliumWaspmote
+  Setup_SunbeddedSodaq
+  Setup_LTLinduino
 }
 
 function Status()
 {
-	GetPackageVersion "Libel. Waspmote   " "waspmote" "echo $LIB_WASPMOTEVER" "$XDAQ_SUPPORT"
-	GetPackageVersion "Libel. Plug&Sense!" "waspmote" "echo $LIB_PLUGSENSEVER" "$XDAQ_SUPPORT"
-	GetPackageVersion "Sunbe. SODAQ Mbili" "$HOMEDEV/Arduino/libraries/Sodaq" "echo $SUNBED_SODAQVER" "$XDAQ_SUPPORT"
-	GetPackageVersion "LT Linduino"	"$HOMEDEV/Arduino/LTSketchbook" "echo $LT_LINDUINOVER" "$XDAQ_SUPPORT"
+  GetPackageVersion "Libel. Waspmote   " "waspmote" "echo $LIB_WASPMOTEVER" "$XDAQ_SUPPORT"
+  GetPackageVersion "Libel. Plug&Sense!" "waspmote" "echo $LIB_PLUGSENSEVER" "$XDAQ_SUPPORT"
+  GetPackageVersion "Sunbe. SODAQ Mbili" "$HOMEDEV/Arduino/libraries/Sodaq" "echo $SUNBED_SODAQVER" "$XDAQ_SUPPORT"
+  GetPackageVersion "LT Linduino"	"$HOMEDEV/Arduino/LTSketchbook" "echo $LT_LINDUINOVER" "$XDAQ_SUPPORT"
 }
 
 source ./xdaq-setup-main.sh

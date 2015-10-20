@@ -36,7 +36,7 @@ function Setup()
   wget http://ftp.us.debian.org/debian/pool/main/d/doxygen/doxygen_1.8.1.2-2_i386.deb
   dpkg -i doxygen_1.8.1.2-2_i386.deb
   apt-get --yes --force-yes -f install
-	apt-get --yes --force-yes --reinstall install doxygen 
+  apt-get --yes --force-yes --reinstall install doxygen 
 }
 
 function Status()

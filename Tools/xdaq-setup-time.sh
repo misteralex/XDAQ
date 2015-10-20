@@ -34,13 +34,13 @@ WEBPAGE=http://playground.arduino.cc/Code/Time
 # XDAQ package manager functions (Setup/Status)
 function Setup()
 {
-	rm -rf $HOMEDEV/Arduino/libraries/Time*
-	cd /tmp
-	rm -rf master*
+  rm -rf $HOMEDEV/Arduino/libraries/Time*
+  cd /tmp
+  rm -rf master*
   wget https://github.com/PaulStoffregen/Time/archive/master.zip
-	unzip master -d $HOMEDEV/Arduino/libraries
+  unzip master -d $HOMEDEV/Arduino/libraries
   mv $HOMEDEV/Arduino/libraries/Time-master $HOMEDEV/Arduino/libraries/Time
-	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/libraries/Time
+  chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/libraries/Time
 
   echo -e "\n\rPlease visit following web page for more details: $WEBPAGE"
 }

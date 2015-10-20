@@ -31,8 +31,8 @@ XDAQ_SUPPORT=DESKTOP
 # XDAQ package manager functions (Setup/Status)
 function Setup()
 {
-	apt-get --yes --force-yes -f install
-	apt-get --yes --force-yes --reinstall install units
+  apt-get --yes --force-yes -f install
+  apt-get --yes --force-yes --reinstall install units
 }
 
 function Status()
