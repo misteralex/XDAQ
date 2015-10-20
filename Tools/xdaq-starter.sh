@@ -1,61 +1,28 @@
 #!/bin/bash
 
 #########################################################################
-# xdaq-starter.sh - Script to build XDAQ v1.0 Virtual Appliance         # 
+# xdaq-starter.sh                                                       #
+#                                                                       #
+# This script is part of XDAQ v1.1.0 Open Source Software Ecosystem     # 
 # Copyright (C) 2015 by AF                                              #
 #                                                                       #
-# xdaq-starter.sh is free software: you can redistribute it and/or      #
+# It is free software: you can redistribute it and/or                   #
 # modify it under the terms of the GNU General Public License           #
 # as published by the Free Software Foundation, either version 3 of     #
 # the License, or (at your option) any later version.                   #
 #                                                                       #
-# xdaq-starter.sh is distributed in the hope that it will be useful,    #
+# It is distributed in the hope that it will be useful,                 #
 # but WITHOUT ANY WARRANTY; without even the implied warranty of        #
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          #
 # GNU General Public License for more details.                          #
 #                                                                       #
-# You should have received a copy of the GNU General Public             #
-# License along with xdaq-starter.sh                                    #
+# You should have received a copy of the GNU General Public License     #
+# along with this program.                                              #
 # If not, see <http://www.gnu.org/licenses/>                            #
 #########################################################################
 
-
-# Get current OS release (UBUNTU, JESSIE, WHEEZY, NODEBIAN)
-function GetOSVersion()
-{
-	OSVERSION="NODEBIAN"
-	if [[ ! -z /etc/debian_version ]];
-	then
-		kernel_base=`uname -r|awk -F'-' '{print $1}'|awk -F'.' '{print $1"."$2}'`
-		kernel_sub=`uname -r|awk -F'-' '{print $2}'`
-		if [[ "$kernel_base" == "3.2" ]]; then OSVERSION="WHEEZY" ; fi
-		if [[ "$kernel_base" == "3.16" ]]; 
-		then
-			if [[ $kernel_sub -lt 30 ]]; 
-			then 
-				OSVERSION="JESSIE"
-			else
-				OSVERSION="UBUNTU"
-			fi
-		fi
-	fi
-}
-
-
-# OS Restart  
-function VMReboot 
-{	
-	echo -n "Reboot OS now (Adviced) " ; sleep .3
-	read -e -i Y -p "(Y/n)? "
-	if [[ $REPLY =~ ^[Yy]$ ]];
-	then
-		echo "XDAQ is rebooting..."
-		sudo reboot
-		exit
-	fi
-	echo
-}
-
+cd ~/XDAQ/Tools
+source ./xdaq-shared.sh
 
 # XDAQ MENU TEMPLATE
 function Menu()
@@ -163,7 +130,7 @@ do
 
 	case $nChoice in
 		0)	return ;;
-    99)	gnome-terminal & ;;
+    99)	xdaq-terminal & ;;
 		1) 	echo "[***] Import old Eclipse projects to current Arduino IDE."
         echo "Please specify full pathname of Eclipse project to update." ; sleep .3
         read -p "Which folder? " project
@@ -526,8 +493,6 @@ then
 fi
 
 # Check XDAQ Project installation
-USERDEV=$USER
-HOMEDEV=/home/$USERDEV
 if [ ! -d $HOMEDEV/XDAQ ];
 then
    echo "Please install XDAQ environment."
@@ -535,13 +500,6 @@ then
    exit
 fi
 
-
-XDAQVER=`cat $HOMEDEV/XDAQ/revisions.txt |head -1|awk -F' ' '{print $2}'`
-HOME_TOOLS=$HOMEDEV/XDAQ/Tools
-HOME_EXAMPLES=$HOMEDEV/XDAQ/Examples
-HOME_ARDUINO=""
-HOME_ARDUINO_LIB=$HOMEDEV/Arduino
-COM=""
 
 echo -e "\n[ XDAQ Starter ]\n"
 echo "Insights to use this tool are available in the XDAQ Guide $XDAQVER."

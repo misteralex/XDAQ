@@ -2,7 +2,7 @@
 Type=Application
 Name=XDAQ Starter
 GenericName=XDAQ Starter
-Exec=xterm -fa 'Monospace:size=12:antialias=true:hinting=true' -fg blue -bg white -geometry 80x48 -e "~/XDAQ/Tools/xdaq-starter.sh"
+Exec=xterm -ls -fa 'Monospace:size=12:antialias=true:hinting=true' -fg blue -bg white -geometry 80x48 -e "~/XDAQ/Tools/xdaq-starter.sh"
 Icon=/usr/share/icons/gnome/256x256/xdaq-starter-logo.png
 StartupNotify=true
 Terminal=false

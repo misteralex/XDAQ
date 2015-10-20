@@ -1,5 +1,5 @@
 # XDAQ - Virtual Appliance - Open Source Stack
-XDAQ is an ecosystem of Open Source software for controlling Arduino based experimental data from sensors. It is avaiable as integration for Debian (Wheezy or Jessie releases), for Ubuntu (release 10.04) and as Virtual Debian Appliance Builder. The release XDAQ v1.0 includes Arduino IDE, Eclipse Luna C/C++ for Arduino and Python toolchains, some useful tools oriented to quality control with Doxygen and ArduinoUnit, to provide high performance and creative processes with openFrameworks C++ toolkit and Processing, to research with Python-based software, to make electronics accessible with Fritzing and more.
+XDAQ is an ecosystem of Open Source software for controlling Arduino based experimental data from sensors. It is avaiable as integration for Debian (Wheezy or Jessie releases), for Ubuntu and as Virtual Debian Appliance Builder. XDAQ includes Arduino IDE, Eclipse Mars C/C++ for Arduino and Python toolchains, some useful tools oriented to quality control with Doxygen and ArduinoUnit, to provide high performance and creative processes with openFrameworks C++ toolkit and Processing, to research with Python-based software, to make electronics accessible with Fritzing and more.
 
 There are many way to use XDAQ:
 - Get XDAQ as Virtual Appliance ready-to-go at www.embeddedrevolution.info
@@ -9,8 +9,18 @@ There are many way to use XDAQ:
 - Meet XDAQ environment as interesting experimental virtual laboratory for your research
 
 
-## Why XDAQ
-XDAQ offers an Arduino Eclipse C++ environment on Debian distribution (XDAQ v1.0 is Wheezy release based). It provides a full Linux virtual machine configured with standard Arduino IDE and Eclipse C++ Framework. XDAQ is a proposal to combine a virtual Linux Desktop environment as framework for lovely Arduino world. There are, as you probably know, a lot of benefits to work on virtual hosts. First of all you keep it in any OS platform. Further, you can freeze your experimental environment anytime and get back it whenever you like from the same status. This virtual appliance is always updated and it is fully Open Source.
+## How to use XDAQ
+There are many ways to use XDAQ:
+
+1. Get XDAQ as Virtual Appliance ready-to-go from VMware Virtual Appliance Marketplace (i.e it is the VMware trusted source for the latest and greatest commercial and open-source virtual appliances).
+
+2. Build your XDAQ virtual environment and install all required packages as described in this guide
+
+3. Get XDAQ from GitHub and use the powerful script xdaq-starter.sh to install all required packages in your favorite platform (e.g. Debian, Ubuntu)
+
+4. Use this guide as comprensive set of scientific tools currently available into Open Source world
+
+5. Meet XDAQ environment as interesting experimental virtual laboratory for your research
 
 
 # Install all XDAQ Stack in one-click

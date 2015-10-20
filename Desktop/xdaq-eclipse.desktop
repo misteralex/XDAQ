@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Eclipse Luna (Arduino / Python / openFrameworks)
+Name=Eclipse (Arduino / Python / openFrameworks)
 GenericName=XDAQ - Debianinux - Ecliplse Luna C/C++ Framework
 Exec=eclipse
 Icon=/usr/share/icons/gnome/256x256/xdaq-eclipse-icon.png
