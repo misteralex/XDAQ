@@ -26,9 +26,6 @@ XDAQ_CATEGORY=CORE
 XDAQ_PACKAGE=Arduino_IDE
 XDAQ_SUPPORT=DESKTOP
 
-#package_name=arduino-nightly-linux32.tar.xz
-#wget http://arduino.cc/download.php?f=%2Farduino-1.6.5-r5-linux32.tar.xz
-
 # Select which release to install
 XDAQ_AUTO_CONFIRM=$2
 
@@ -88,16 +85,16 @@ function Setup()
       rm -rf $package_name $package_root
       wget http://arduino.cc/download.php?f=/$package_name -O $package_name
       tar xvf $package_name $package_root/revisions.txt
-      ARDUINOVER=`cat arduino-nightly/revisions.txt|head -n1|awk -F' ' '{print $2}'`
+      arduino_ver=`cat arduino-nightly/revisions.txt|head -n1|awk -F' ' '{print $2}'`
       rm -rf /opt/arduino*
-      mkdir /opt/arduino-$ARDUINOVER
-      tar xvf $package_name -C /opt/arduino-$ARDUINOVER --strip-components=1
-      if [ -d /opt/arduino-$ARDUINOVER ];
+      mkdir /opt/arduino-$arduino_ver
+      tar xvf $package_name -C /opt/arduino-$arduino_ver --strip-components=1
+      if [ -d /opt/arduino-$arduino_ver ];
       then
-          chown -R $USERDEV:$USERDEV /opt/arduino-$ARDUINOVER
-          rm -rf arduino-$ARDUINOVER-linux32.tar.xz
+          chown -R $USERDEV:$USERDEV /opt/arduino-$arduino_ver
+          rm -rf arduino-$arduino_ver-linux32.tar.xz
           rm -rf /usr/local/bin/arduino
-          ln -fs /opt/arduino-$ARDUINOVER/arduino /usr/local/bin/arduino
+          ln -fs /opt/arduino-$arduino_ver/arduino /usr/local/bin/arduino
           cp -f $HOMEDEV/XDAQ/Admin/xdaq-arduino.desktop $GNOME_SHARE_APPS
           cp -f $HOMEDEV/XDAQ/Admin/xdaq-arduino-logo.png $GNOME_SHARE_ICONS
 
@@ -117,7 +114,7 @@ function Setup()
 
 function Status()
 {
-    GetPackageVersion "Arduino IDE"	"arduino" "echo $ARDUINOVER" "$XDAQ_SUPPORT"
+    GetPackageVersion "Arduino IDE"	"arduino" "echo $arduino_ver" "$XDAQ_SUPPORT"
 }
 
 source ./xdaq-setup-main.sh
