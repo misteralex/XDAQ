@@ -32,17 +32,23 @@ XDAQ_AUTO_CONFIRM=$2
 
 function SelectRelease()
 {
-if [[ $XDAQ_AUTO_CONFIRM != "Y" ]]; then
-   echo "Eclipse installation - select a release"
-   echo " [1] Eclipse Neon"
-   echo " [2] Eclipse Mars"
-   echo " [3] Eclipse Luna (default)"
-   echo
-   echo " [0] Exit"
-   echo ; sleep .5
-   read -p "Which Eclipse release? " nRelease
-   echo
+   # Default release
+   nRelease=3
+
+   if [[ $XDAQ_AUTO_CONFIRM != "Y" ]]; then
+      echo "Eclipse installation - select a release"
+      echo " [1] Eclipse Neon"
+      echo " [2] Eclipse Mars"
+      echo " [3] Eclipse Luna (default)"
+      echo
+      echo " [0] Exit"
+      echo ; sleep .5
+      read -p "Which Eclipse release? " nRelease
+      echo
+   fi
+
    if [[ "$nRelease" == "" ]]; then nRelease=3 ; fi
+
    case $nRelease in
      0) ;;
      1) echo "Install Eclipse Neon IDE"
@@ -62,7 +68,6 @@ if [[ $XDAQ_AUTO_CONFIRM != "Y" ]]; then
    esac
 
    return $nRelease
-fi
 }
 
 # XDAQ package manager functions (Setup/Status/Support)

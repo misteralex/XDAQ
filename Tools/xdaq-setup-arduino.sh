@@ -26,49 +26,93 @@ XDAQ_CATEGORY=CORE
 XDAQ_PACKAGE=Arduino_IDE
 XDAQ_SUPPORT=DESKTOP
 
-ARDUINOPACKAGE=arduino-nightly-linux32.tar.xz
+#package_name=arduino-nightly-linux32.tar.xz
+#wget http://arduino.cc/download.php?f=%2Farduino-1.6.5-r5-linux32.tar.xz
+
+# Select which release to install
+XDAQ_AUTO_CONFIRM=$2
+
+function SelectRelease()
+{
+   # Default release
+   nRelease=2
+
+   if [[ $XDAQ_AUTO_CONFIRM != "Y" ]]; then
+      echo "Arduino installation - select a release"
+      echo " [1] Arduino 1.6.6 Nightly Build Release"
+      echo " [2] Arduino 1.6.5-r5 Official Release (default)"
+      echo
+      echo " [0] Exit"
+      echo ; sleep .5
+      read -p "Which release? " nRelease
+      echo
+   fi
+
+   if [[ "$nRelease" == "" ]]; then nRelease=2 ; fi
+
+   case $nRelease in
+     0) ;;
+     1) echo "Install Arduino IDE (Nightly Build Release)"
+        package_name=arduino-nightly-linux32.tar.xz
+        package_ftp=
+        ;;
+     2) echo "Install Arduino IDE (Official Release)"
+        package_name=arduino-1.6.5-r5-linux32.tar.xz
+        package_ftp=
+        ;;
+    
+     *) echo "Error: Invalid option..."	;;
+   esac
+
+   return $nRelease
+}
 
 
 # XDAQ package manager functions (Setup/Status/Support)
 function Setup()
 {
-  	Setup_Java
+  SelectRelease
+  if [[ $? != 0 ]];
+  then
 
-  	echo -e "\nInstall Arduino IDE (Package: $ARDUINOPACKAGE}"
-    rm -rf $HOMEDEV/Arduino_BACK
-    mv $HOMEDEV/Arduino $HOMEDEV/Arduino_BACK
-    echo "Previous Arduino user context (i.e. ~/Arduino) is preserved for XDAQ user purposes (i.e. ~/Arduino_BACK)."
-    echo
+      Setup_Java
 
-  	package_root=`echo $ARDUINOPACKAGE|awk -F'-' '{print $1"-"$2}'`
-  	cd /tmp
-  	rm -rf $ARDUINOPACKAGE $package_root
-  	wget http://arduino.cc/download.php?f=/$ARDUINOPACKAGE -O $ARDUINOPACKAGE
-  	tar xvf $ARDUINOPACKAGE $package_root/revisions.txt
-  	ARDUINOVER=`cat arduino-nightly/revisions.txt|head -n1|awk -F' ' '{print $2}'`
-  	rm -rf /opt/arduino*
-  	mkdir /opt/arduino-$ARDUINOVER
-  	tar xvf $ARDUINOPACKAGE -C /opt/arduino-$ARDUINOVER --strip-components=1
-  	if [ -d /opt/arduino-$ARDUINOVER ];
-  	then
-  		chown -R $USERDEV:$USERDEV /opt/arduino-$ARDUINOVER
-  		rm -rf arduino-$ARDUINOVER-linux32.tar.xz
-  		rm -rf /usr/local/bin/arduino
-  		ln -fs /opt/arduino-$ARDUINOVER/arduino /usr/local/bin/arduino
-  		cp -f $HOMEDEV/XDAQ/Admin/xdaq-arduino.desktop $GNOME_SHARE_APPS
-  		cp -f $HOMEDEV/XDAQ/Admin/xdaq-arduino-logo.png $GNOME_SHARE_ICONS
+      echo -e "\nInstall Arduino IDE (Package: $package_name}"
+      rm -rf $HOMEDEV/Arduino_BACK
+      mv $HOMEDEV/Arduino $HOMEDEV/Arduino_BACK
+      echo "Previous Arduino user context (i.e. ~/Arduino) is preserved for XDAQ user purposes (i.e. ~/Arduino_BACK)."
+      echo
 
-  		# Check Arduino user folders
-  		if [ ! -d $HOMEDEV/Arduino ];
-  		then
-    			mkdir $HOMEDEV/Arduino
-  	  		mkdir $HOMEDEV/Arduino/libraries
-  		  	mkdir $HOMEDEV/Arduino/hardware
-          chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino
-  		fi
-  	else
-  		echo "*** Installation Error. Try again Arduino IDE setup process."
-  	fi
+      package_root=`echo $package_name|awk -F'-' '{print $1"-"$2}'`
+      cd /tmp
+      rm -rf $package_name $package_root
+      wget http://arduino.cc/download.php?f=/$package_name -O $package_name
+      tar xvf $package_name $package_root/revisions.txt
+      ARDUINOVER=`cat arduino-nightly/revisions.txt|head -n1|awk -F' ' '{print $2}'`
+      rm -rf /opt/arduino*
+      mkdir /opt/arduino-$ARDUINOVER
+      tar xvf $package_name -C /opt/arduino-$ARDUINOVER --strip-components=1
+      if [ -d /opt/arduino-$ARDUINOVER ];
+      then
+          chown -R $USERDEV:$USERDEV /opt/arduino-$ARDUINOVER
+          rm -rf arduino-$ARDUINOVER-linux32.tar.xz
+          rm -rf /usr/local/bin/arduino
+          ln -fs /opt/arduino-$ARDUINOVER/arduino /usr/local/bin/arduino
+          cp -f $HOMEDEV/XDAQ/Admin/xdaq-arduino.desktop $GNOME_SHARE_APPS
+          cp -f $HOMEDEV/XDAQ/Admin/xdaq-arduino-logo.png $GNOME_SHARE_ICONS
+
+          # Check Arduino user folders
+          if [ ! -d $HOMEDEV/Arduino ];
+          then
+              mkdir $HOMEDEV/Arduino
+              mkdir $HOMEDEV/Arduino/libraries
+              mkdir $HOMEDEV/Arduino/hardware
+              chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino
+          fi
+    	else
+    		  echo "*** Installation Error. Try again Arduino IDE setup process."
+  	  fi
+  fi
 }
 
 function Status()
