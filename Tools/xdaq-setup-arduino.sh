@@ -50,12 +50,12 @@ function SelectRelease()
    case $nRelease in
      0) ;;
      1) echo "Install Arduino IDE (Nightly Build Release)"
+        arduino_ver=arduino-nightly
         package_name=arduino-nightly-linux32.tar.xz
-        package_ftp=
         ;;
      2) echo "Install Arduino IDE (Official Release)"
+        arduino_ver=arduino-1.6.5
         package_name=arduino-1.6.5-r5-linux32.tar.xz
-        package_ftp=
         ;;
     
      *) echo "Error: Invalid option..."	;;
@@ -71,30 +71,36 @@ function Setup()
   SelectRelease
   if [[ $? != 0 ]];
   then
+      if [[ -e /opt/$arduino_ver ]]; then
+          sudo ln -sf /opt/$arduino_ver/arduino /usr/local/bin/arduino
+          echo "Arduino <$package_name> already installed. Ready to use."
+          echo
+
+          echo -n "Do you want reinstall this environment? " ; sleep .3
+          read -e -i Y -p "(Y/n)? " ; echo
+          if [[ $REPLY =~ ^[Nn]$ ]]; then echo ; return ; fi
+      fi
+
+      echo -e "\nInstall Arduino IDE (Package: $package_name}"
 
       Setup_Java
 
-      echo -e "\nInstall Arduino IDE (Package: $package_name}"
-      rm -rf $HOMEDEV/Arduino_BACK
-      mv $HOMEDEV/Arduino $HOMEDEV/Arduino_BACK
-      echo "Previous Arduino user context (i.e. ~/Arduino) is preserved for XDAQ user purposes (i.e. ~/Arduino_BACK)."
-      echo
+      rm -rf /usr/local/bin/arduino
+      rm -rf /opt/$arduino_ver
+      rm -f $GNOME_SHARE_APPS/xdaq-arduino.desktop
+      rm -f $GNOME_SHARE_ICONS/xdaq-arduino-logo.png
 
-      package_root=`echo $package_name|awk -F'-' '{print $1"-"$2}'`
       cd /tmp
-      rm -rf $package_name $package_root
+      rm -rf $package_name
+      rm -rf /opt/arduino
+
       wget http://arduino.cc/download.php?f=/$package_name -O $package_name
-      tar xvf $package_name $package_root/revisions.txt
-      arduino_ver=`cat arduino-nightly/revisions.txt|head -n1|awk -F' ' '{print $2}'`
-      rm -rf /opt/arduino*
-      mkdir /opt/arduino-$arduino_ver
-      tar xvf $package_name -C /opt/arduino-$arduino_ver --strip-components=1
-      if [ -d /opt/arduino-$arduino_ver ];
+      mkdir /opt/$arduino_ver
+      tar xvf $package_name -C /opt/$arduino_ver --strip-components=1
+      if [ -d /opt/$arduino_ver ];
       then
-          chown -R $USERDEV:$USERDEV /opt/arduino-$arduino_ver
-          rm -rf arduino-$arduino_ver-linux32.tar.xz
-          rm -rf /usr/local/bin/arduino
-          ln -fs /opt/arduino-$arduino_ver/arduino /usr/local/bin/arduino
+          chown -R $USERDEV:$USERDEV /opt/$arduino_ver
+          ln -fs /opt/$arduino_ver/arduino /usr/local/bin/arduino
           cp -f $HOMEDEV/XDAQ/Admin/xdaq-arduino.desktop $GNOME_SHARE_APPS
           cp -f $HOMEDEV/XDAQ/Admin/xdaq-arduino-logo.png $GNOME_SHARE_ICONS
 
@@ -114,7 +120,7 @@ function Setup()
 
 function Status()
 {
-    GetPackageVersion "Arduino IDE"	"arduino" "echo $arduino_ver" "$XDAQ_SUPPORT"
+    GetPackageVersion "Arduino IDE"	"arduino" "echo $ARDUINOVER" "$XDAQ_SUPPORT"
 }
 
 source ./xdaq-setup-main.sh

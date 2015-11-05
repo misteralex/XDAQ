@@ -28,13 +28,13 @@ function GetPackageVersion()
 {
     pkg_name=$1
     pkg_check=$2
-    pkg_version=$3
+    pkg_version="$3"
     pkg_support=$4
 
     PKG_VER=""
     if [[ "`which $pkg_check`" != "" ]] || [[ ${pkg_check:0:1} == "/" && -d $pkg_check ]];
     then
-      if [ ! -z "`eval $pkg_version`" ]; then PKG_VER=`eval $pkg_version` ; fi
+        if [ ! -z "`eval $pkg_version`" ]; then PKG_VER=`eval $pkg_version` ; fi
     fi
 
     pkg_status=1
