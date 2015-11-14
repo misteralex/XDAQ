@@ -501,6 +501,16 @@ then
 fi
 
 
+# Check arguments to process XDAQ Tools requests
+if [[ "$1" != "" ]];
+then
+    echo
+    echo "Execute the XDAQ Tools: <XDAQ/Tools/xdaq-setup-$1.sh>" 
+    sudo $HOMEDEV/XDAQ/Tools/xdaq-setup-$1.sh $2
+    exit
+fi
+
+
 echo -e "\n[ XDAQ Starter ]\n"
 echo "Insights to use this tool are available in the XDAQ Guide $XDAQVER."
 echo "Please visit www.embeddedrevolution.info to get more info."

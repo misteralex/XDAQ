@@ -3,7 +3,7 @@
 #########################################################################
 # xdaq-setup-memoryfree.sh                                              #
 #                                                                       #
-# This script is part of XDAQ v1.1.0 Open Source Software Ecosystem     # 
+# This script is part of XDAQ v1.1 Open Source Software Ecosystem       # 
 # Copyright (C) 2015 by AF                                              #
 #                                                                       #
 # It is free software: you can redistribute it and/or                   #
@@ -27,24 +27,31 @@ XDAQ_CATEGORY=LIBRARY
 XDAQ_PACKAGE=MemoryFree
 XDAQ_SUPPORT=ARDUINO
 
-VER=1.0
-
+XDAQ_PACK_NAME=$XDAQ_PACKAGE
 
 # XDAQ package manager functions (Setup/Status)
 function Setup()
 {
-	rm -rf $HOMEDEV/Arduino/libraries/MemoryFree*
+  xdaq_source=https://github.com/McNeight/MemoryFree/archive/master.zip
+  xdaq_webpage=https://github.com/McNeight/MemoryFree
+
+	if [[ "$XDAQ_PACK_NAME" != "" ]]; then rm -rf $HOMEDEV/Arduino/libraries/$XDAQ_PACK_NAME* ; fi
+  
+	rm -rf $HOMEDEV/Arduino/libraries/$XDAQ_PACK_NAME*
 	cd /tmp
 	rm -rf master*
-	wget https://github.com/McNeight/MemoryFree/archive/master.zip
+	wget $xdaq_source
 	unzip master -d $HOMEDEV/Arduino/libraries
-  mv $HOMEDEV/Arduino/libraries/MemoryFree-master $HOMEDEV/Arduino/libraries/MemoryFree
-	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/libraries/MemoryFree
+	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/libraries/$XDAQ_PACK_NAME-master
+
+  echo -e "\n\rPlease visit following web page for more details: $xdaq_webpage\n"
 }
 
 function Status()
 {
-  GetPackageVersion "MemoryFree" "$HOMEDEV/Arduino/libraries/MemoryFree" "echo $VER" "$XDAQ_SUPPORT"
+  #xdaq_package_ver=`cat $HOMEDEV/Arduino/libraries/$XDAQ_PACK_NAME-master/library.properties |grep version|awk -F'=' '{print $2}'`    SOURCE MISSING
+  xdaq_package_ver=1.0
+  GetPackageVersion $XDAQ_PACKAGE "$HOMEDEV/Arduino/libraries/$XDAQ_PACK_NAME-master" "echo $xdaq_package_ver" "$XDAQ_SUPPORT"
 }
 
 source ./xdaq-setup-main.sh

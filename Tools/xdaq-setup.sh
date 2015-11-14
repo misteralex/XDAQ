@@ -381,52 +381,6 @@ function Setup_VMwareTools()
 }
 
 
-# SERIAL PORT
-function SetSerialPort()
-{
-	# Serial Port configuration
-	COM_SETTING="115200 -parenb -parodd cs8 -hupcl -cstopb cread clocal -crtscts -ignbrk -brkint -ignpar -parmrk inpck -istrip -inlcr -igncr -icrnl -ixon -ixoff -iuclc -ixany -imaxbel -iutf8 -opost -olcuc -ocrnl -onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0 -isig -icanon -iexten -echo -echoe -echok -echonl -noflsh -xcase -tostop -echoprt -echoctl -echoke"
-
-	check_com=TRUE
-	max_attempts=5
-	while [[ $check_com == TRUE && $max_attempts > 0 ]]
-	do
-		COM=/dev/`dmesg | grep tty|tail -1|awk -F: '{print $3}'|awk -F: '{print $1}'|awk -F' ' '{print $1}'`
-		ls $COM &>/dev/null
-		echo -e "\n[SETUP] Default Serial Port for Arduino connection: $COM\n"
-		if [ ! -c $COM ];
-		then
-			echo "WARNING: expected serial port does not work."
-			echo "Please check standard serial Arduino board connection."
-			echo "and check WMware Player > Removable Devices > Arduino XXX > Connect"
-			echo "Arduino Serial Port within XDAQ environment has default value of 115200 bps."
-			echo
-	
-			echo -n "Try again " ; sleep .3
-			read -e -i Y -p "(Y/n)? " ; echo
-			if [[ $REPLY =~ ^[Nn]$ ]]; then check_com=FALSE ; fi
-		else
-			check_com=FALSE
-		fi
-		
-		# Exit after 5 attempts
-		max_attempts=$(($max_attempts - 1))
-	done
-
-	if [ "$1" == "" ]; 
-	then
-		# Set permissions
-		echo "Grant permissions to <$USERDEV> to use Arduino Serial Port ($COM)"
-		adduser $USERDEV dialout
-		chmod a+rw $COM
-
-		# Set serial port configuration
-		stty -F $COM $COM_SETTING
-		echo -e "\nArduino Serial Port configured."
-	fi
-}
-
-
 # TIME ZONE
 function SetTimeZone()
 {
@@ -502,7 +456,8 @@ fi
 
 
 # CHECK SERIAL PORT for Arduino connection
-SetSerialPort SCAN
+XDAQTools xdaq-setup-serial.sh
+
 
 # Global flag to check the status of all expected packages
 CHECK_CONFIG=1
@@ -547,7 +502,7 @@ do
    114) setup_function="Setup_VMwareTools" ;;
    120) ShowConfig ;;
    121) CheckConfig ;;
-   122) SetSerialPort ;;
+   122) XDAQTools xdaq-setup-serial.sh ;;
    123) SetTimeZone ;;
    124) SetKeyboard ;;
    125) ShowPanel ;;

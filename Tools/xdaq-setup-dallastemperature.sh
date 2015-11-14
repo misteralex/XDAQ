@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #########################################################################
-# xdaq-setup-xtable.sh                                                  #
+# xdaq-setup-dallastemperature.sh                                       #
 #                                                                       #
-# This script is part of XDAQ v1.1 Open Source Software Ecosystem       # 
+# This script is part of XDAQ v1.1.0 Open Source Software Ecosystem     # 
 # Copyright (C) 2015 by AF                                              #
 #                                                                       #
 # It is free software: you can redistribute it and/or                   #
@@ -24,24 +24,24 @@
 
 # SETTING
 XDAQ_CATEGORY=LIBRARY
-XDAQ_PACKAGE=XTable
+XDAQ_PACKAGE=DallasTemperature
 XDAQ_SUPPORT=ARDUINO
 
-XDAQ_PACK_NAME=XTable-Arduino
+XDAQ_PACK_NAME=Arduino-Temperature-Control-Library
 
 # XDAQ package manager functions (Setup/Status)
 function Setup()
 {
-  xdaq_source=https://github.com/misteralex/XTable-Arduino/archive/master.zip
-  xdaq_webpage=http://embeddedrevolution.blogspot.fr/2015/10/xtable.html
+  xdaq_source=https://github.com/milesburton/Arduino-Temperature-Control-Library/archive/master.zip
+  xdaq_webpage=https://github.com/milesburton/Arduino-Temperature-Control-Library
 
-	if [[ "$XDAQ_PACK_NAME" != "" ]]; then rm -rf $HOMEDEV/Arduino/libraries/$XDAQ_PACK_NAME* ; fi
+  if [[ "$XDAQ_PACK_NAME" != "" ]]; then rm -rf $HOMEDEV/Arduino/libraries/$XDAQ_PACK_NAME* ; fi
 	cd /tmp
 	rm -rf master*
 	wget $xdaq_source
 	unzip master -d $HOMEDEV/Arduino/libraries
 	chown -R $USERDEV:$USERDEV $HOMEDEV/Arduino/libraries/$XDAQ_PACK_NAME-master
-
+  
   echo -e "\n\rPlease visit following web page for more details: $xdaq_webpage\n"
 }
 
